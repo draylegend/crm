@@ -1,11 +1,15 @@
-<div class="add">
-  <button>+</button>
+<header>Appointments</header>
+
+<div>
+  <div class="add">
+    <button>+</button>
+  </div>
+
+  <crm-appointment-calendar-days></crm-appointment-calendar-days>
+
+  <crm-appointment-time></crm-appointment-time>
+
+  <crm-appointment-calendar
+    [appointments]="appointments$ | async"
+  ></crm-appointment-calendar>
 </div>
-
-<crm-appointment-calendar-days></crm-appointment-calendar-days>
-
-<crm-appointment-time></crm-appointment-time>
-
-<crm-appointment-calendar
-  [appointments]="appointments$ | async"
-></crm-appointment-calendar>

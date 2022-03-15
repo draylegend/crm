@@ -40,7 +40,7 @@
 </div>
 
 <section>
-  <div *ngIf="pointer$ | async" class="pointer"></div>
+  <crm-pointer></crm-pointer>
 
   <crm-appointment
     *ngFor="let a of appointments$ | async"

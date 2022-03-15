@@ -49,8 +49,13 @@ button {
   position: sticky;
   left: 0;
 
-  > * {
+  > *:not(crm-pointer) {
     text-align: right;
     height: 60px;
   }
+}
+
+crm-pointer {
+  right: 0;
+  width: 40px;
 }

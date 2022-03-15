@@ -2,7 +2,5 @@
   background: red;
   position: absolute;
   height: 1px;
-  width: calc(100% / var(--days));
-  left: calc(100% / var(--days) * var(--pointerLeft));
   top: calc(1px * var(--pointerTop));
 }

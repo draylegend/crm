@@ -1,1 +1,52 @@
-appointment works!
+<div class="add">
+  <button>+</button>
+</div>
+
+<div class="days">
+  <div>Sun</div>
+  <div>Mon</div>
+  <div>Tue</div>
+  <div>Wed</div>
+  <div>Thu</div>
+  <div>Fri</div>
+  <div>Sat</div>
+</div>
+
+<div class="time">
+  <div>0:00</div>
+  <div>1:00</div>
+  <div>2:00</div>
+  <div>3:00</div>
+  <div>4:00</div>
+  <div>5:00</div>
+  <div>6:00</div>
+  <div>7:00</div>
+  <div>8:00</div>
+  <div>9:00</div>
+  <div>10:00</div>
+  <div>11:00</div>
+  <div>12:00</div>
+  <div>13:00</div>
+  <div>14:00</div>
+  <div>15:00</div>
+  <div>16:00</div>
+  <div>17:00</div>
+  <div>18:00</div>
+  <div>19:00</div>
+  <div>20:00</div>
+  <div>21:00</div>
+  <div>22:00</div>
+  <div>23:00</div>
+</div>
+
+<section>
+  <div *ngIf="pointer$ | async" class="pointer"></div>
+
+  <div
+    *ngFor="let a of appointments$ | async"
+    [ngStyle]="getStyle(a)"
+    class="appointment"
+  >
+    Appointment
+  </div>
+</section>

@@ -3,3 +3,5 @@
 
 npx nx format
 git add .
+npx nx lint
+npx nx test

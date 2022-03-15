@@ -13,11 +13,12 @@
         "main": "apps/web-admin/src/main.ts",
         "polyfills": "apps/web-admin/src/polyfills.ts",
         "tsConfig": "apps/web-admin/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
         "assets": [
           "apps/web-admin/src/favicon.ico",
           "apps/web-admin/src/assets"
         ],
-        "styles": ["apps/web-admin/src/styles.css"],
+        "styles": ["apps/web-admin/src/styles.scss"],
         "scripts": []
       },
       "configurations": {

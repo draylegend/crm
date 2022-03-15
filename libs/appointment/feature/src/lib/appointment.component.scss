@@ -1,0 +1,86 @@
+:host {
+  --days: 7;
+  --pointerLeft: 0;
+  --pointerTop: 20;
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  grid-template-rows: 64px 1fr;
+  flex-grow: 1;
+  overflow: auto;
+  grid-gap: 16px;
+}
+
+.add {
+  background: white;
+  display: flex;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+button {
+  flex-grow: 1;
+  border-radius: 50%;
+  margin: 16px 0 0 16px;
+}
+
+.days {
+  background: white;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(var(--days), 1fr);
+  grid-column-start: 2;
+  grid-row-start: 1;
+  position: sticky;
+  top: 0;
+}
+
+.days > * {
+  flex-grow: 1;
+  align-self: center;
+  text-align: center;
+}
+
+section {
+  display: grid;
+  grid-template-columns: repeat(var(--days), 1fr);
+  position: relative;
+}
+
+section > * {
+  flex-grow: 1;
+}
+
+.days,
+section {
+  > * {
+    width: 200px;
+  }
+}
+
+.time {
+  background: white;
+  z-index: 1;
+  position: sticky;
+  left: 0;
+
+  > * {
+    text-align: right;
+    height: 60px;
+  }
+}
+
+.pointer {
+  background: red;
+  position: absolute;
+  height: 1px;
+  width: calc(100% / var(--days));
+  left: calc(100% / var(--days) * var(--pointerLeft));
+  top: calc(1px * var(--pointerTop));
+}
+
+.appointment {
+  background: lightblue;
+  position: absolute;
+}

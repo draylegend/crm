@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@crm/appointment/feature": ["libs/appointment/feature/src/index.ts"]
+      "@crm/appointment/feature": ["libs/appointment/feature/src/index.ts"],
+      "@crm/appointment/ui": ["libs/appointment/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

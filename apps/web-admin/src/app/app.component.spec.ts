@@ -1,9 +1,11 @@
+import { RouterTestingModule } from '@angular/router/testing';
 import { createComponentFactory, Spectator } from '@ngneat/spectator';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   const componentFactory = createComponentFactory({
     component: AppComponent,
+    imports: [RouterTestingModule],
   });
   let spec: Spectator<AppComponent>;
 

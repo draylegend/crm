@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "api": "apps/api",
+    "appointment-feature": "libs/appointment/feature",
     "web-admin": "apps/web-admin",
     "web-admin-e2e": "apps/web-admin-e2e"
   }

@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/appointment/feature",
+  "sourceRoot": "libs/appointment/feature/src",
+  "prefix": "crm",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/appointment/feature"],
+      "options": {
+        "jestConfig": "libs/appointment/feature/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/appointment/feature/src/**/*.ts",
+          "libs/appointment/feature/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["scope:appointment type:feature"]
+}

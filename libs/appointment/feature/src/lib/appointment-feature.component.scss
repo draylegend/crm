@@ -25,24 +25,6 @@ button {
   margin: 16px 0 0 16px;
 }
 
-.days {
-  background: white;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: repeat(var(--days), 1fr);
-  grid-column-start: 2;
-  grid-row-start: 1;
-  position: sticky;
-  top: 0;
-
-  & > * {
-    flex-grow: 1;
-    align-self: center;
-    text-align: center;
-    width: 200px;
-  }
-}
-
 .time {
   background: white;
   z-index: 1;

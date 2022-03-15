@@ -10,4 +10,4 @@ import { AppointmentListComponent } from './appointment-list.component';
     RouterModule.forChild([{ path: '', component: AppointmentListComponent }]),
   ],
 })
-export class AppointmentModule {}
+export class AppointmentFeatureModule {}

@@ -12,7 +12,9 @@ import { AppComponent } from './app.component';
       {
         path: '',
         loadChildren: () =>
-          import('@crm/appointment/feature').then(m => m.AppointmentModule),
+          import('@crm/appointment/feature').then(
+            m => m.AppointmentFeatureModule,
+          ),
       },
       { path: '**', redirectTo: '' },
     ]),

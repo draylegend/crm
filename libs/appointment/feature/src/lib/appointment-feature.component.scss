@@ -24,20 +24,3 @@ button {
   border-radius: 50%;
   margin: 16px 0 0 16px;
 }
-
-.time {
-  background: white;
-  z-index: 1;
-  position: sticky;
-  left: 0;
-
-  > *:not(crm-pointer) {
-    text-align: right;
-    height: 60px;
-  }
-}
-
-crm-pointer {
-  right: 0;
-  width: 40px;
-}

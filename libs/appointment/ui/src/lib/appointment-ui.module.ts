@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { AppointmentCalendarComponent } from './appointment-calendar/appointment-calendar.component';
+import { AppointmentCalendarComponent } from './calendar/appointment-calendar.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { PointerComponent } from './pointer/pointer.component';
 import { AppointmentCalendarDaysComponent } from './days/appointment-calendar-days.component';

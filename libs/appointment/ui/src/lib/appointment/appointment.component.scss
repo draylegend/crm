@@ -1,4 +1,5 @@
 :host {
   background: lightblue;
   position: absolute;
+  width: calc(100% / var(--days));
 }

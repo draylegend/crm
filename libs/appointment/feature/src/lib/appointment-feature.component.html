@@ -39,11 +39,6 @@
   <div>23:00</div>
 </div>
 
-<section>
-  <crm-pointer></crm-pointer>
-
-  <crm-appointment
-    *ngFor="let a of appointments$ | async"
-    [ngStyle]="getStyle(a)"
-  ></crm-appointment>
-</section>
+<crm-appointment-calendar
+  [appointments]="appointments$ | async"
+></crm-appointment-calendar>

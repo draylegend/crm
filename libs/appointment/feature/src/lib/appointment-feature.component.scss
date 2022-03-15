@@ -34,27 +34,11 @@ button {
   grid-row-start: 1;
   position: sticky;
   top: 0;
-}
 
-.days > * {
-  flex-grow: 1;
-  align-self: center;
-  text-align: center;
-}
-
-section {
-  display: grid;
-  grid-template-columns: repeat(var(--days), 1fr);
-  position: relative;
-}
-
-section > * {
-  flex-grow: 1;
-}
-
-.days,
-section {
-  > * {
+  & > * {
+    flex-grow: 1;
+    align-self: center;
+    text-align: center;
     width: 200px;
   }
 }

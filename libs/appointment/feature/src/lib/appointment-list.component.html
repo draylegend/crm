@@ -42,11 +42,8 @@
 <section>
   <div *ngIf="pointer$ | async" class="pointer"></div>
 
-  <div
+  <crm-appointment
     *ngFor="let a of appointments$ | async"
     [ngStyle]="getStyle(a)"
-    class="appointment"
-  >
-    Appointment
-  </div>
+  ></crm-appointment>
 </section>

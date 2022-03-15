@@ -79,8 +79,3 @@ section {
   left: calc(100% / var(--days) * var(--pointerLeft));
   top: calc(1px * var(--pointerTop));
 }
-
-.appointment {
-  background: lightblue;
-  position: absolute;
-}

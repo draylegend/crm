@@ -2,14 +2,16 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AppointmentUiModule } from '@crm/appointment/ui';
-import { AppointmentListComponent } from './appointment-list.component';
+import { AppointmentFeatureComponent } from './appointment-feature.component';
 
 @NgModule({
-  declarations: [AppointmentListComponent],
+  declarations: [AppointmentFeatureComponent],
   imports: [
     AppointmentUiModule,
     CommonModule,
-    RouterModule.forChild([{ path: '', component: AppointmentListComponent }]),
+    RouterModule.forChild([
+      { path: '', component: AppointmentFeatureComponent },
+    ]),
   ],
 })
 export class AppointmentFeatureModule {}

@@ -14,10 +14,10 @@ interface AppointmentStyle {
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  styleUrls: ['./appointment-list.component.scss'],
-  templateUrl: './appointment-list.component.html',
+  styleUrls: ['./appointment-feature.component.scss'],
+  templateUrl: './appointment-feature.component.html',
 })
-export class AppointmentListComponent {
+export class AppointmentFeatureComponent {
   readonly pointer$ = interval(1000).pipe(tap(() => this.#updatePointer()));
   readonly appointments$: Observable<Appointment[]> = of([
     { id: 1, start: new Date(2022, 2, 15, 9, 45).getTime() },

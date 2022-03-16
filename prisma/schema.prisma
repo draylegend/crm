@@ -9,6 +9,6 @@ datasource db {
 
 model Appointment {
   id       String @id @default(cuid())
-  start    String
+  start    Int
   duration Int    @default(30)
 }

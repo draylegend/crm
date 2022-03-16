@@ -6,6 +6,6 @@ import { AppointmentType } from './types';
 export class AppointmentResolver {
   @Query(() => [AppointmentType])
   appointments(): Appointment[] {
-    return [{ id: '1', start: 'start', duration: 30 }];
+    return [{ id: '1', start: 1647334800000, duration: 30 }];
   }
 }

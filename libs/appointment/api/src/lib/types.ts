@@ -7,7 +7,7 @@ export abstract class AppointmentType implements Appointment {
   abstract id: string;
 
   @Field()
-  abstract start: string;
+  abstract start: number;
 
   @Field()
   abstract duration: number;

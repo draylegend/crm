@@ -1,11 +1,9 @@
 import { createComponentFactory, Spectator } from '@ngneat/spectator/jest';
-import { AppointmentCalendarDaysComponent } from './appointment-calendar-days.component';
+import { AppointmentDaysComponent } from './appointment-days.component';
 
 describe('DaysComponent', () => {
-  const componentFactory = createComponentFactory(
-    AppointmentCalendarDaysComponent,
-  );
-  let spec: Spectator<AppointmentCalendarDaysComponent>;
+  const componentFactory = createComponentFactory(AppointmentDaysComponent);
+  let spec: Spectator<AppointmentDaysComponent>;
 
   beforeEach(() => (spec = componentFactory()));
 

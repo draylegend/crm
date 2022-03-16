@@ -1,7 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { AppointmentUiModule } from '@crm/appointment/ui';
+import {
+  AppointmentEditComponent,
+  AppointmentUiModule,
+} from '@crm/appointment/ui';
 import { AppointmentFeatureComponent } from './appointment-feature.component';
 
 @NgModule({
@@ -10,7 +13,11 @@ import { AppointmentFeatureComponent } from './appointment-feature.component';
     AppointmentUiModule,
     CommonModule,
     RouterModule.forChild([
-      { path: '', component: AppointmentFeatureComponent },
+      {
+        path: '',
+        component: AppointmentFeatureComponent,
+        children: [{ path: ':id', component: AppointmentEditComponent }],
+      },
     ]),
   ],
 })

@@ -1,4 +1,11 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  HostListener,
+  Input,
+  Output,
+} from '@angular/core';
 import { Appointment } from '@prisma/client';
 
 interface AppointmentStyle {
@@ -14,6 +21,11 @@ interface AppointmentStyle {
 })
 export class AppointmentCalendarComponent {
   @Input() appointments: Appointment[] | null = [];
+  @Output() selectedChanges = new EventEmitter<Appointment>();
+
+  @HostListener('click') appointmentClick(): void {
+    this.selectedChanges.emit();
+  }
 
   getStyle(a: Appointment): AppointmentStyle {
     const date = new Date(a.start);

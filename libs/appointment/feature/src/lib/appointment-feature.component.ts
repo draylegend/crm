@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
 import { Appointment } from '@prisma/client';
 import { Observable, of } from 'rxjs';
 
@@ -16,7 +17,15 @@ export class AppointmentFeatureComponent {
     },
   ]);
 
-  constructor(private readonly el: ElementRef) {
+  constructor(
+    private readonly el: ElementRef,
+    private readonly router: Router,
+  ) {
     el.nativeElement.style.setProperty('--days', 7);
+  }
+
+  navigate(appointment: Appointment): void {
+    console.log(appointment);
+    this.router.navigate(['appointments', 1]);
   }
 }

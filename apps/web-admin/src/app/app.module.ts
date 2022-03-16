@@ -10,13 +10,13 @@ import { AppComponent } from './app.component';
     BrowserModule,
     RouterModule.forRoot([
       {
-        path: '',
+        path: 'appointments',
         loadChildren: () =>
           import('@crm/appointment/feature').then(
             m => m.AppointmentFeatureModule,
           ),
       },
-      { path: '**', redirectTo: '' },
+      { path: '**', redirectTo: 'appointments' },
     ]),
   ],
 })

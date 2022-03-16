@@ -1,14 +1,13 @@
-import { Spectator, createComponentFactory } from '@ngneat/spectator/jest';
-
+import { createComponentFactory, Spectator } from '@ngneat/spectator/jest';
 import { AppointmentEditComponent } from './appointment-edit.component';
 
 describe('AppointmentDetailsComponent', () => {
-  let spectator: Spectator<AppointmentEditComponent>;
-  const createComponent = createComponentFactory(AppointmentEditComponent);
+  const componentFactory = createComponentFactory(AppointmentEditComponent);
+  let spec: Spectator<AppointmentEditComponent>;
+
+  beforeEach(() => (spec = componentFactory()));
 
   it('should create', () => {
-    spectator = createComponent();
-
-    expect(spectator.component).toBeTruthy();
+    expect(spec.component).toBeTruthy();
   });
 });

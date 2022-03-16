@@ -1,0 +1,12 @@
+:host {
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+section {
+  background: white;
+  position: absolute;
+  inset: 20vh 5vw;
+}

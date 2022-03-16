@@ -6,7 +6,12 @@ import {
   HostListener,
   Renderer2,
 } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import {
+  ActivatedRoute,
+  Event as RouterEvent,
+  NavigationEnd,
+  Router,
+} from '@angular/router';
 import { Observable, tap } from 'rxjs';
 
 @Component({
@@ -41,7 +46,7 @@ export class AppointmentEditComponent {
     }
   }
 
-  #historyPush$(): Observable<any> {
+  #historyPush$(): Observable<RouterEvent> {
     return this.router.events.pipe(
       tap(
         event =>

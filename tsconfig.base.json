@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@crm/appointment/domain": ["libs/appointment/domain/src/index.ts"],
       "@crm/appointment/feature": ["libs/appointment/feature/src/index.ts"],
       "@crm/appointment/ui": ["libs/appointment/ui/src/index.ts"]
     }

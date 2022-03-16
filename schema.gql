@@ -8,6 +8,12 @@ type AppointmentType {
   duration: Float!
 }
 
+type ClientType {
+  id: String!
+  firstName: String!
+}
+
 type Query {
   appointments: [AppointmentType!]!
+  clients: [ClientType!]!
 }

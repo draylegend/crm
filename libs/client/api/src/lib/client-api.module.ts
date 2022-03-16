@@ -1,8 +1,8 @@
+import { PrismaService } from '@crm/shared/api';
 import { Module } from '@nestjs/common';
+import { ClientResolver } from './client.resolver';
 
 @Module({
-  controllers: [],
-  providers: [],
-  exports: [],
+  providers: [ClientResolver, PrismaService],
 })
 export class ClientApiModule {}

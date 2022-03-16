@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Appointment } from '@prisma/client';
+import { type AppointmentType } from '@crm/appointment/api';
 import { Apollo } from 'apollo-angular';
 import { map, Observable } from 'rxjs';
 import { ENTITIES_GQL } from './graphql';
@@ -8,9 +8,9 @@ import { ENTITIES_GQL } from './graphql';
 export class AppointmentFacade {
   constructor(private readonly apollo: Apollo) {}
 
-  entities(): Observable<Appointment[]> {
+  entities(): Observable<AppointmentType[]> {
     return this.apollo
-      .watchQuery<{ appointments: Appointment[] }>({
+      .watchQuery<{ appointments: AppointmentType[] }>({
         query: ENTITIES_GQL,
       })
       .valueChanges.pipe(map(r => r.data.appointments));

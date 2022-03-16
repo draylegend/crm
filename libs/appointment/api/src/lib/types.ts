@@ -1,14 +1,19 @@
 import { Field, ObjectType } from '@nestjs/graphql';
-import { Appointment } from '@prisma/client';
+
+export interface AppointmentType {
+  id: string;
+  start: number;
+  duration: number;
+}
 
 @ObjectType()
-export abstract class AppointmentType implements Appointment {
+export class AppointmentType {
   @Field()
-  abstract id: string;
+  id!: string;
 
   @Field()
-  abstract start: number;
+  start!: number;
 
   @Field()
-  abstract duration: number;
+  duration!: number;
 }

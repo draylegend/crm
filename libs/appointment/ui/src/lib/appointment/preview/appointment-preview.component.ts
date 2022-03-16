@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Appointment } from '@prisma/client';
+import { type AppointmentType } from '@crm/appointment/api';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -8,5 +8,5 @@ import { Appointment } from '@prisma/client';
   templateUrl: './appointment-preview.component.html',
 })
 export class AppointmentPreviewComponent {
-  @Input() entity!: Appointment;
+  @Input() entity!: AppointmentType;
 }

@@ -8,7 +8,7 @@ import {
   QueryList,
   ViewChildren,
 } from '@angular/core';
-import { Appointment } from '@prisma/client';
+import { type AppointmentType } from '@crm/appointment/api';
 import { AppointmentPreviewComponent } from '../preview/appointment-preview.component';
 
 interface AppointmentStyle {
@@ -23,8 +23,8 @@ interface AppointmentStyle {
   templateUrl: './appointment-calendar.component.html',
 })
 export class AppointmentCalendarComponent {
-  @Input() appointments: Appointment[] | null = [];
-  @Output() selectedChanges = new EventEmitter<Appointment>();
+  @Input() appointments: AppointmentType[] | null = [];
+  @Output() selectedChanges = new EventEmitter<AppointmentType>();
 
   @ViewChildren(AppointmentPreviewComponent)
   readonly previews!: QueryList<AppointmentPreviewComponent>;
@@ -40,7 +40,7 @@ export class AppointmentCalendarComponent {
     }
   }
 
-  getStyle(a: Appointment): AppointmentStyle {
+  getStyle(a: AppointmentType): AppointmentStyle {
     const date = new Date(a.start);
 
     return {

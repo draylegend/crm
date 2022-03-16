@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
+import { type AppointmentType } from '@crm/appointment/api';
 import { AppointmentFacade } from '@crm/appointment/domain';
-import { Appointment } from '@prisma/client';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -19,7 +19,7 @@ export class AppointmentFeatureComponent {
     el.nativeElement.style.setProperty('--days', 7);
   }
 
-  navigate(appointment: Appointment): void {
+  navigate(appointment: AppointmentType): void {
     this.router.navigate(['appointments', appointment.id]);
   }
 }

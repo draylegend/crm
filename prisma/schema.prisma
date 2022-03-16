@@ -8,7 +8,15 @@ datasource db {
 }
 
 model Appointment {
-  id       String @id @default(cuid())
+  id       String  @id @unique @default(cuid())
   start    Int
-  duration Int    @default(30)
+  duration Int     @default(30)
+  client   Client? @relation(fields: [clientId], references: [id])
+  clientId String?
+}
+
+model Client {
+  id          String        @id @unique @default(cuid())
+  firstName   String
+  appointment Appointment[]
 }

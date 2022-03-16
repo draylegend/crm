@@ -6,6 +6,7 @@
     "appointment-domain": "libs/appointment/domain",
     "appointment-feature": "libs/appointment/feature",
     "appointment-ui": "libs/appointment/ui",
+    "client-api": "libs/client/api",
     "shared-api": "libs/shared/api",
     "web-admin": "apps/web-admin",
     "web-admin-e2e": "apps/web-admin-e2e"

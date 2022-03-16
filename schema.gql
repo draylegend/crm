@@ -2,15 +2,16 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type ClientType {
+  id: String!
+  firstName: String!
+}
+
 type AppointmentType {
   id: String!
   start: Float!
   duration: Float!
-}
-
-type ClientType {
-  id: String!
-  firstName: String!
+  client: ClientType!
 }
 
 type Query {

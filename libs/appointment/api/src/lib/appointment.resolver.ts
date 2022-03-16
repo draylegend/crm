@@ -9,6 +9,6 @@ export class AppointmentResolver {
 
   @Query(() => [AppointmentType])
   appointments(): Promise<Appointment[]> {
-    return this.p.appointment.findMany();
+    return this.p.appointment.findMany({ include: { client: true } });
   }
 }

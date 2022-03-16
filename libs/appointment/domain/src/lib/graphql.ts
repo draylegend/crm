@@ -6,6 +6,10 @@ export const ENTITIES_GQL = gql`
       id
       start
       duration
+      client {
+        id
+        firstName
+      }
     }
   }
 `;

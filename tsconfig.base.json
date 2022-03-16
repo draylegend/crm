@@ -18,7 +18,8 @@
       "@crm/appointment/api": ["libs/appointment/api/src/index.ts"],
       "@crm/appointment/domain": ["libs/appointment/domain/src/index.ts"],
       "@crm/appointment/feature": ["libs/appointment/feature/src/index.ts"],
-      "@crm/appointment/ui": ["libs/appointment/ui/src/index.ts"]
+      "@crm/appointment/ui": ["libs/appointment/ui/src/index.ts"],
+      "@crm/shared/api": ["libs/shared/api/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

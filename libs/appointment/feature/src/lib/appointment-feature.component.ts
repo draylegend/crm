@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppointmentFacade } from '@crm/appointment/domain';
 import { Appointment } from '@prisma/client';
-import { Observable, of } from 'rxjs';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -9,20 +9,10 @@ import { Observable, of } from 'rxjs';
   templateUrl: './appointment-feature.component.html',
 })
 export class AppointmentFeatureComponent {
-  readonly appointments$: Observable<Appointment[]> = of([
-    {
-      id: '1',
-      start: new Date(2022, 2, 15, 9, 45).toISOString(),
-      duration: 30,
-    },
-    {
-      id: '2',
-      start: new Date(2022, 2, 16, 13, 30).toISOString(),
-      duration: 30,
-    },
-  ]);
+  readonly appointments$ = this.facade.entities();
 
   constructor(
+    private readonly facade: AppointmentFacade,
     private readonly el: ElementRef,
     private readonly router: Router,
   ) {

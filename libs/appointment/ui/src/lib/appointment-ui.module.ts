@@ -18,9 +18,11 @@ const COMPONENTS: Type<unknown>[] = [
   PointerComponent,
 ];
 
+const MODULES: Type<unknown>[] = [CommonModule];
+
 @NgModule({
   declarations: [COMPONENTS],
-  imports: [CommonModule],
-  exports: [COMPONENTS],
+  imports: [MODULES],
+  exports: [COMPONENTS, MODULES],
 })
 export class AppointmentUiModule {}

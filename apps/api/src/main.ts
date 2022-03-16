@@ -8,6 +8,7 @@ import { AppModule } from './app/app.module';
   const port = process.env.PORT || 3333;
 
   app.setGlobalPrefix(globalPrefix);
+  app.enableCors();
 
   await app.listen(port);
   Logger.log(`🚀 http://localhost:${port}/graphql`);

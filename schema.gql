@@ -1,0 +1,13 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type AppointmentType {
+  id: String!
+  start: Float!
+  duration: Float!
+}
+
+type Query {
+  appointments: [AppointmentType!]!
+}

@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
+import { Apollo } from 'apollo-angular';
+import { AppointmentFacade } from './appointment.facade';
 
 @NgModule({
-  imports: [],
+  providers: [Apollo, AppointmentFacade],
 })
 export class AppointmentDomainModule {}

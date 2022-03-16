@@ -1,6 +1,6 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { AppointmentDomainModule } from '@crm/appointment/domain';
 import {
   AppointmentEditComponent,
   AppointmentUiModule,
@@ -10,8 +10,8 @@ import { AppointmentFeatureComponent } from './appointment-feature.component';
 @NgModule({
   declarations: [AppointmentFeatureComponent],
   imports: [
+    AppointmentDomainModule,
     AppointmentUiModule,
-    CommonModule,
     RouterModule.forChild([
       {
         path: '',

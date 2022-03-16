@@ -15,6 +15,11 @@ export class AppointmentFeatureComponent {
       start: new Date(2022, 2, 15, 9, 45).toISOString(),
       duration: 30,
     },
+    {
+      id: '2',
+      start: new Date(2022, 2, 16, 13, 30).toISOString(),
+      duration: 30,
+    },
   ]);
 
   constructor(
@@ -25,7 +30,6 @@ export class AppointmentFeatureComponent {
   }
 
   navigate(appointment: Appointment): void {
-    console.log(appointment);
-    this.router.navigate(['appointments', 1]);
+    this.router.navigate(['appointments', appointment.id]);
   }
 }

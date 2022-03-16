@@ -1,9 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-
-interface Appointment {
-  id: any;
-  start: number;
-}
+import { Appointment } from '@prisma/client';
 
 interface AppointmentStyle {
   left: string;

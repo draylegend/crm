@@ -8,7 +8,7 @@ datasource db {
 }
 
 model Appointment {
-  id       String   @id @default(cuid())
-  start    DateTime
-  duration Int      @default(30)
+  id       String @id @default(cuid())
+  start    String
+  duration Int    @default(30)
 }

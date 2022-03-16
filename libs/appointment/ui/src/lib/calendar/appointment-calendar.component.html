@@ -1,5 +1,6 @@
 <crm-appointment
   *ngFor="let a of appointments"
+  [entity]="a"
   [ngStyle]="getStyle(a)"
 ></crm-appointment>
 <crm-pointer></crm-pointer>

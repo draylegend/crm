@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "api": "apps/api",
+    "appointment-api": "libs/appointment/api",
     "appointment-domain": "libs/appointment/domain",
     "appointment-feature": "libs/appointment/feature",
     "appointment-ui": "libs/appointment/ui",

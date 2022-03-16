@@ -1,17 +1,15 @@
+import { AppointmentApiModule } from '@crm/appointment/api';
 import { ApolloDriver } from '@nestjs/apollo';
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 
 @Module({
-  controllers: [AppController],
   imports: [
+    AppointmentApiModule,
     GraphQLModule.forRoot({
       autoSchemaFile: true,
       driver: ApolloDriver,
     }),
   ],
-  providers: [AppService],
 })
 export class AppModule {}

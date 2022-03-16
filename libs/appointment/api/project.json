@@ -1,0 +1,22 @@
+{
+  "root": "libs/appointment/api",
+  "sourceRoot": "libs/appointment/api/src",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/appointment/api/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/appointment/api"],
+      "options": {
+        "jestConfig": "libs/appointment/api/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

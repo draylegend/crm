@@ -9,7 +9,7 @@ import { AppointmentFacade } from '@crm/appointment/domain';
   templateUrl: './appointment-feature.component.html',
 })
 export class AppointmentFeatureComponent {
-  readonly appointments$ = this.facade.entities();
+  readonly appointments$ = this.facade.entities$();
 
   constructor(
     private readonly facade: AppointmentFacade,

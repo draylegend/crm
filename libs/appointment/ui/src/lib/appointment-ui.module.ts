@@ -3,7 +3,6 @@ import { NgModule, Type } from '@angular/core';
 import {
   AppointmentCalendarComponent,
   AppointmentDaysComponent,
-  AppointmentEditComponent,
   AppointmentPreviewComponent,
   AppointmentTimeComponent,
 } from './appointment';
@@ -12,7 +11,6 @@ import { PointerComponent } from './pointer/pointer.component';
 const COMPONENTS: Type<unknown>[] = [
   AppointmentCalendarComponent,
   AppointmentDaysComponent,
-  AppointmentEditComponent,
   AppointmentPreviewComponent,
   AppointmentTimeComponent,
   PointerComponent,

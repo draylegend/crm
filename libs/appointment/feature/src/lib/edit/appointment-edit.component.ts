@@ -2,9 +2,7 @@ import { Location } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
-  ElementRef,
   HostListener,
-  Renderer2,
 } from '@angular/core';
 import {
   ActivatedRoute,
@@ -25,8 +23,6 @@ export class AppointmentEditComponent {
 
   constructor(
     public readonly route: ActivatedRoute,
-    private readonly el: ElementRef,
-    private readonly renderer: Renderer2,
     private readonly location: Location,
     private readonly router: Router,
   ) {}

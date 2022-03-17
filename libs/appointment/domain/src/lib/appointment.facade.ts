@@ -8,7 +8,7 @@ import { ENTITIES_GQL } from './graphql';
 export class AppointmentFacade {
   constructor(private readonly apollo: Apollo) {}
 
-  entities(): Observable<AppointmentType[]> {
+  entities$(): Observable<AppointmentType[]> {
     return this.apollo
       .watchQuery<{ appointments: AppointmentType[] }>({
         query: ENTITIES_GQL,

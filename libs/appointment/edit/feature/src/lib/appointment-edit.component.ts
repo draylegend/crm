@@ -1,14 +1,16 @@
-import { Location } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
   HostListener,
+  NgModule,
 } from '@angular/core';
 import {
   ActivatedRoute,
   Event as RouterEvent,
   NavigationEnd,
   Router,
+  RouterModule,
 } from '@angular/router';
 import { Observable, tap } from 'rxjs';
 
@@ -52,3 +54,15 @@ export class AppointmentEditComponent {
     );
   }
 }
+
+@NgModule({
+  declarations: [AppointmentEditComponent],
+  imports: [
+    CommonModule,
+    RouterModule.forChild([
+      { path: '', component: AppointmentEditComponent },
+      { path: '**', redirectTo: '' },
+    ]),
+  ],
+})
+export class AppointmentEditFeature {}

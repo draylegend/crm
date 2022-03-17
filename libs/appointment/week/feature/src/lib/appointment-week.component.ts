@@ -1,7 +1,17 @@
-import { ChangeDetectionStrategy, Component, ElementRef } from '@angular/core';
-import { Router } from '@angular/router';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  NgModule,
+} from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 import { type AppointmentType } from '@crm/appointment/api';
-import { AppointmentFacade } from '@crm/appointment/domain';
+import {
+  AppointmentDomainModule,
+  AppointmentFacade,
+} from '@crm/appointment/domain';
+import { AppointmentEditFeature } from '@crm/appointment/edit/feature';
+import { AppointmentUiModule } from '@crm/appointment/ui';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -23,3 +33,19 @@ export class AppointmentWeekComponent {
     this.router.navigate(['appointments', appointment.id]);
   }
 }
+
+@NgModule({
+  declarations: [AppointmentWeekComponent],
+  imports: [
+    AppointmentDomainModule,
+    AppointmentUiModule,
+    RouterModule.forChild([
+      {
+        path: '',
+        component: AppointmentWeekComponent,
+        children: [{ path: ':id', loadChildren: () => AppointmentEditFeature }],
+      },
+    ]),
+  ],
+})
+export class AppointmentWeekFeature {}

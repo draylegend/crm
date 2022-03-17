@@ -1,1 +1,1 @@
-export * from './lib/appointment-week.feature';
+export * from './lib/appointment-week.component';

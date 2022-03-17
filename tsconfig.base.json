@@ -20,10 +20,10 @@
       "@crm/appointment/edit/feature": [
         "libs/appointment/edit/feature/src/index.ts"
       ],
-      "@crm/appointment/ui": ["libs/appointment/ui/src/index.ts"],
       "@crm/appointment/week/feature": [
         "libs/appointment/week/feature/src/index.ts"
       ],
+      "@crm/appointment/week/ui": ["libs/appointment/week/ui/src/index.ts"],
       "@crm/client/api": ["libs/client/api/src/index.ts"],
       "@crm/shared/api": ["libs/shared/api/src/index.ts"]
     }

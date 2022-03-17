@@ -1,6 +1,6 @@
 module.exports = {
-  displayName: 'appointment-ui',
-  preset: '../../../jest.preset.js',
+  displayName: 'appointment-week-ui',
+  preset: '../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
@@ -8,7 +8,7 @@ module.exports = {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../../coverage/libs/appointment/ui',
+  coverageDirectory: '../../../../coverage/libs/appointment/week/ui',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },

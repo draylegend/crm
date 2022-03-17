@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/appointment/week/ui",
+  "sourceRoot": "libs/appointment/week/ui/src",
+  "prefix": "crm",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/appointment/week/ui"],
+      "options": {
+        "jestConfig": "libs/appointment/week/ui/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/appointment/week/ui/src/**/*.ts",
+          "libs/appointment/week/ui/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["scope:appointment-week type:ui"]
+}

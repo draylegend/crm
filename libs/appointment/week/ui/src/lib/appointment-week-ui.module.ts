@@ -23,4 +23,4 @@ const MODULES: Type<unknown>[] = [CommonModule];
   imports: [MODULES],
   exports: [COMPONENTS, MODULES],
 })
-export class AppointmentUiModule {}
+export class AppointmentWeekUiModule {}

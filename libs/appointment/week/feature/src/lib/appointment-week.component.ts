@@ -11,7 +11,7 @@ import {
   AppointmentFacade,
 } from '@crm/appointment/domain';
 import { AppointmentEditFeature } from '@crm/appointment/edit/feature';
-import { AppointmentUiModule } from '@crm/appointment/ui';
+import { AppointmentWeekUiModule } from '@crm/appointment/week/ui';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -38,7 +38,7 @@ export class AppointmentWeekComponent {
   declarations: [AppointmentWeekComponent],
   imports: [
     AppointmentDomainModule,
-    AppointmentUiModule,
+    AppointmentWeekUiModule,
     RouterModule.forChild([
       {
         path: '',

@@ -29,10 +29,8 @@ export class AppointmentEditComponent {
     private readonly router: Router,
   ) {}
 
-  @HostListener('click', ['$event']) click(
-    e: Event & { path: { localName: string }[] },
-  ) {
-    if (e.path.some(p => p.localName === 'section')) {
+  @HostListener('click', ['$event.target']) click(e: HTMLElement) {
+    if (e.closest('section')) {
       return;
     }
 

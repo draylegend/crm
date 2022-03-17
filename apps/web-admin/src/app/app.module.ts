@@ -18,7 +18,7 @@ import { AppComponent } from './app.component';
         path: 'appointments',
         loadChildren: () =>
           import('@crm/appointment/week/feature').then(
-            m => m.AppointmentWeekFeatureModule,
+            m => m.AppointmentWeekFeature,
           ),
       },
       { path: '**', redirectTo: 'appointments' },

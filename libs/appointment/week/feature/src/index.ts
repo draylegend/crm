@@ -1,1 +1,1 @@
-export * from './lib/appointment-week-feature.module';
+export * from './lib/appointment-week.feature';

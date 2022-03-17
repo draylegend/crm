@@ -5,10 +5,10 @@ import { AppointmentFacade } from '@crm/appointment/domain';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  styleUrls: ['./appointment-week-feature.component.scss'],
-  templateUrl: './appointment-week-feature.component.html',
+  styleUrls: ['./appointment-week.component.scss'],
+  templateUrl: './appointment-week.component.html',
 })
-export class AppointmentWeekFeatureComponent {
+export class AppointmentWeekComponent {
   readonly appointments$ = this.facade.entities$();
 
   constructor(

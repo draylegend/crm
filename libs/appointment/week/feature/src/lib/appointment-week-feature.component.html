@@ -1,0 +1,18 @@
+<header>Appointments</header>
+
+<div>
+  <div class="add">
+    <button>+</button>
+  </div>
+
+  <crm-appointment-days></crm-appointment-days>
+
+  <crm-appointment-time></crm-appointment-time>
+
+  <crm-appointment-calendar
+    (selectedChanges)="navigate($event)"
+    [appointments]="appointments$ | async"
+  ></crm-appointment-calendar>
+</div>
+
+<router-outlet></router-outlet>

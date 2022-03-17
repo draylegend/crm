@@ -2,21 +2,21 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AppointmentDomainModule } from '@crm/appointment/domain';
 import { AppointmentUiModule } from '@crm/appointment/ui';
-import { AppointmentFeatureComponent } from './appointment-feature.component';
+import { AppointmentWeekFeatureComponent } from './appointment-week-feature.component';
 import { AppointmentEditComponent } from './edit/appointment-edit.component';
 
 @NgModule({
-  declarations: [AppointmentEditComponent, AppointmentFeatureComponent],
+  declarations: [AppointmentEditComponent, AppointmentWeekFeatureComponent],
   imports: [
     AppointmentDomainModule,
     AppointmentUiModule,
     RouterModule.forChild([
       {
         path: '',
-        component: AppointmentFeatureComponent,
+        component: AppointmentWeekFeatureComponent,
         children: [{ path: ':id', component: AppointmentEditComponent }],
       },
     ]),
   ],
 })
-export class AppointmentFeatureModule {}
+export class AppointmentWeekFeatureModule {}

@@ -1,5 +1,9 @@
 <section>
-  <p>{{ route.snapshot.params | json }}</p>
+  <p *ngIf="selected$ | async as selected; else loading">
+    {{ selected.start }}
+  </p>
 </section>
+
+<ng-template #loading>loading...</ng-template>
 
 <ng-container *ngIf="sub$ | async"></ng-container>

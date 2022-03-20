@@ -12,6 +12,7 @@ import {
   Router,
   RouterModule,
 } from '@angular/router';
+import { AppointmentFacade } from '@crm/appointment/domain';
 import { Observable, tap } from 'rxjs';
 
 @Component({
@@ -20,10 +21,12 @@ import { Observable, tap } from 'rxjs';
   templateUrl: './appointment-edit.component.html',
 })
 export class AppointmentEditComponent {
+  readonly selected$ = this.facade.selected$(this.route.snapshot.params['id']);
   readonly sub$ = this.#historyPush$();
   readonly #history: string[] = [];
 
   constructor(
+    public readonly facade: AppointmentFacade,
     public readonly route: ActivatedRoute,
     private readonly location: Location,
     private readonly router: Router,

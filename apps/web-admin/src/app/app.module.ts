@@ -2,7 +2,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { InMemoryCache } from '@apollo/client/core';
+import { ApolloClientOptions, InMemoryCache } from '@apollo/client/core';
+import { appointmentEditTypePolicies } from '@crm/appointment/domain';
 import { APOLLO_OPTIONS } from 'apollo-angular';
 import { HttpLink } from 'apollo-angular/http';
 import { AppComponent } from './app.component';
@@ -27,8 +28,16 @@ import { AppComponent } from './app.component';
   providers: [
     {
       provide: APOLLO_OPTIONS,
-      useFactory: (httpLink: HttpLink) => ({
-        cache: new InMemoryCache(),
+      useFactory: (httpLink: HttpLink): ApolloClientOptions<unknown> => ({
+        cache: new InMemoryCache({
+          typePolicies: {
+            Query: {
+              fields: {
+                ...appointmentEditTypePolicies?.['Query'].fields,
+              },
+            },
+          },
+        }),
         link: httpLink.create({ uri: 'http://localhost:3333/graphql' }),
       }),
       deps: [HttpLink],

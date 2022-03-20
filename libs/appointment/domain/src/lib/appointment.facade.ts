@@ -16,7 +16,7 @@ export class AppointmentFacade {
       .valueChanges.pipe(map(r => r.data.appointments));
   }
 
-  selected$(id: string) {
+  selected$(id: string): Observable<AppointmentType | undefined> {
     return this.apollo
       .watchQuery<{
         appointmentSelected?: AppointmentType;

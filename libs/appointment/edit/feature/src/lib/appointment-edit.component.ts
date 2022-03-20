@@ -1,4 +1,4 @@
-import { CommonModule, Location } from '@angular/common';
+import { Location } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -13,6 +13,7 @@ import {
   RouterModule,
 } from '@angular/router';
 import { AppointmentFacade } from '@crm/appointment/domain';
+import { AppointmentEditUiModule } from '@crm/appointment/edit/ui';
 import { Observable, tap } from 'rxjs';
 
 @Component({
@@ -59,7 +60,7 @@ export class AppointmentEditComponent {
 @NgModule({
   declarations: [AppointmentEditComponent],
   imports: [
-    CommonModule,
+    AppointmentEditUiModule,
     RouterModule.forChild([
       { path: '', component: AppointmentEditComponent },
       { path: '**', redirectTo: '' },

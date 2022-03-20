@@ -1,7 +1,10 @@
 <section>
-  <p *ngIf="selected$ | async as selected; else loading">
+  <crm-appointment-edit-form
+    *ngIf="selected$ | async as selected; else loading"
+    [entity]="selected"
+  >
     {{ selected.start }}
-  </p>
+  </crm-appointment-edit-form>
 </section>
 
 <ng-template #loading>loading...</ng-template>

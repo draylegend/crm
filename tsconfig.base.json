@@ -20,6 +20,7 @@
       "@crm/appointment/edit/feature": [
         "libs/appointment/edit/feature/src/index.ts"
       ],
+      "@crm/appointment/edit/ui": ["libs/appointment/edit/ui/src/index.ts"],
       "@crm/appointment/week/feature": [
         "libs/appointment/week/feature/src/index.ts"
       ],

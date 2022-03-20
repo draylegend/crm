@@ -5,6 +5,7 @@
     "appointment-api": "libs/appointment/api",
     "appointment-domain": "libs/appointment/domain",
     "appointment-edit-feature": "libs/appointment/edit/feature",
+    "appointment-edit-ui": "libs/appointment/edit/ui",
     "appointment-week-feature": "libs/appointment/week/feature",
     "appointment-week-ui": "libs/appointment/week/ui",
     "client-api": "libs/client/api",

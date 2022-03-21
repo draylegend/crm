@@ -12,10 +12,10 @@ import {
   Router,
   RouterModule,
 } from '@angular/router';
-import { type AppointmentType } from '@crm/appointment/api';
+import { type AppointmentInput } from '@crm/appointment/api';
 import { AppointmentFacade } from '@crm/appointment/domain';
 import { AppointmentEditUiModule } from '@crm/appointment/edit/ui';
-import { Observable, tap } from 'rxjs';
+import { merge, Observable, tap } from 'rxjs';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -24,7 +24,7 @@ import { Observable, tap } from 'rxjs';
 })
 export class AppointmentEditComponent {
   readonly selected$ = this.facade.selected$(this.route.snapshot.params['id']);
-  readonly sub$ = this.#historyPush$();
+  readonly sub$ = merge(this.#historyPush$(), this.facade.save$);
   readonly #history: string[] = [];
 
   constructor(
@@ -57,8 +57,11 @@ export class AppointmentEditComponent {
     );
   }
 
-  save(entity: AppointmentType): void {
-    console.log(entity);
+  save(input: AppointmentInput): void {
+    this.facade.save.next({
+      ...input,
+      start: new Date(input.start).getTime(),
+    });
   }
 }
 

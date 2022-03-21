@@ -1,11 +1,23 @@
 import { Injectable } from '@angular/core';
-import { type AppointmentType } from '@crm/appointment/api';
+import { AppointmentInput, type AppointmentType } from '@crm/appointment/api';
 import { Apollo } from 'apollo-angular';
-import { filter, map, Observable } from 'rxjs';
-import { ENTITIES_GQL, SELECTED_GQL } from './graphql';
+import { exhaustMap, filter, map, Observable, Subject } from 'rxjs';
+import { ENTITIES_GQL, SAVE_GQL, SELECTED_GQL } from './graphql';
 
 @Injectable()
 export class AppointmentFacade {
+  readonly save = new Subject<AppointmentInput>();
+  readonly save$ = this.save.pipe(
+    exhaustMap(entity =>
+      this.apollo.mutate<unknown, { entity: AppointmentInput }>({
+        mutation: SAVE_GQL,
+        variables: {
+          entity: removeTypename(entity),
+        },
+      }),
+    ),
+  );
+
   constructor(private readonly apollo: Apollo) {}
 
   entities$(): Observable<AppointmentType[]> {
@@ -30,3 +42,17 @@ export class AppointmentFacade {
       );
   }
 }
+
+export const removeTypename = <T, K extends keyof T>(
+  entity: T & { __typename?: string },
+): T => {
+  if ('__typename' in entity) {
+    delete entity.__typename;
+  }
+
+  for (const key in entity) {
+    typeof entity[key as K] === 'object' && removeTypename(entity[key as K]);
+  }
+
+  return entity;
+};

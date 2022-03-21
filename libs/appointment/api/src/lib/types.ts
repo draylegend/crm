@@ -1,11 +1,11 @@
-import { Client, ClientType } from '@crm/client/api';
-import { Field, ObjectType } from '@nestjs/graphql';
+import { ClientInput, ClientType } from '@crm/client/api';
+import { Field, InputType, ObjectType } from '@nestjs/graphql';
 
 export interface AppointmentType {
   id: string;
   start: number;
   duration: number;
-  client: Client;
+  client: ClientType;
 }
 
 @ObjectType()
@@ -20,5 +20,20 @@ export class AppointmentType {
   duration!: number;
 
   @Field(() => ClientType)
-  client!: Client;
+  client!: ClientType;
+}
+
+@InputType()
+export class AppointmentInput {
+  @Field({ nullable: true })
+  id?: string;
+
+  @Field()
+  start!: number;
+
+  @Field()
+  duration!: number;
+
+  @Field(() => ClientInput)
+  client!: ClientInput;
 }

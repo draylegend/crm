@@ -18,3 +18,19 @@ type Query {
   appointments: [AppointmentType!]!
   clients: [ClientType!]!
 }
+
+type Mutation {
+  appointmentSave(entity: AppointmentInput!): AppointmentType!
+}
+
+input AppointmentInput {
+  id: String
+  start: Float!
+  duration: Float!
+  client: ClientInput!
+}
+
+input ClientInput {
+  id: String
+  firstName: String!
+}

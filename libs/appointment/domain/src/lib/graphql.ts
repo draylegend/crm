@@ -27,3 +27,17 @@ export const SELECTED_GQL = gql`
     }
   }
 `;
+
+export const SAVE_GQL = gql`
+  mutation AppointmentSave($entity: AppointmentInput!) {
+    appointmentSave(entity: $entity) {
+      id
+      start
+      duration
+      client {
+        id
+        firstName
+      }
+    }
+  }
+`;

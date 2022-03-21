@@ -12,6 +12,7 @@ import {
   Router,
   RouterModule,
 } from '@angular/router';
+import { type AppointmentType } from '@crm/appointment/api';
 import { AppointmentFacade } from '@crm/appointment/domain';
 import { AppointmentEditUiModule } from '@crm/appointment/edit/ui';
 import { Observable, tap } from 'rxjs';
@@ -54,6 +55,10 @@ export class AppointmentEditComponent {
           this.#history.push(event.urlAfterRedirects),
       ),
     );
+  }
+
+  save(entity: AppointmentType): void {
+    console.log(entity);
   }
 }
 

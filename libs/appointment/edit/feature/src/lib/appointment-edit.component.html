@@ -1,5 +1,6 @@
 <section>
   <crm-appointment-edit-form
+    (save)="save($event)"
     *ngIf="selected$ | async as selected; else loading"
     [entity]="selected"
   >

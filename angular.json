@@ -9,6 +9,7 @@
     "appointment-week-feature": "libs/appointment/week/feature",
     "appointment-week-ui": "libs/appointment/week/ui",
     "client-api": "libs/client/api",
+    "client-edit-ui": "libs/client/edit/ui",
     "shared-api": "libs/shared/api",
     "web-admin": "apps/web-admin",
     "web-admin-e2e": "apps/web-admin-e2e"

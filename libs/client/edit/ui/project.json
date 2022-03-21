@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/client/edit/ui",
+  "sourceRoot": "libs/client/edit/ui/src",
+  "prefix": "crm",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/client/edit/ui"],
+      "options": {
+        "jestConfig": "libs/client/edit/ui/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/client/edit/ui/src/**/*.ts",
+          "libs/client/edit/ui/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["scope:client-edit type:ui"]
+}

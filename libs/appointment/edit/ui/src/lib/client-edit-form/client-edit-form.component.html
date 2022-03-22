@@ -1,8 +1,8 @@
 <input
-  (blur)="visible = false"
-  (focus)="visible = true"
+  (blur)="focus$.next(false)"
+  (focus)="focus$.next(true)"
   formControlName="firstName"
 />
-<ul *ngIf="visible">
-  <li *ngFor="let client of clients">{{ client.firstName }}</li>
+<ul *ngIf="focus$ | push">
+  <li *ngFor="let client of filteredClients$ | push">{{ client.firstName }}</li>
 </ul>

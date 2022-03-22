@@ -1,8 +1,8 @@
 <section>
   <crm-appointment-edit-form
     (save)="save($event)"
-    *ngIf="selected$ | async as selected; else loading"
-    [clients]="facade.clients$ | async"
+    *ngIf="selected$ | push as selected; else loading"
+    [clients]="facade.clients$ | push"
     [entity]="selected"
   >
     {{ selected.start }}
@@ -11,4 +11,4 @@
 
 <ng-template #loading>loading...</ng-template>
 
-<ng-container *ngIf="sub$ | async"></ng-container>
+<ng-container *ngIf="sub$ | push"></ng-container>

@@ -47,6 +47,13 @@ export class AppointmentEditComponent {
     }
   }
 
+  save(input: AppointmentInput): void {
+    this.facade.save.next({
+      ...input,
+      start: new Date(input.start).getTime(),
+    });
+  }
+
   #historyPush$(): Observable<RouterEvent> {
     return this.router.events.pipe(
       tap(
@@ -55,13 +62,6 @@ export class AppointmentEditComponent {
           this.#history.push(event.urlAfterRedirects),
       ),
     );
-  }
-
-  save(input: AppointmentInput): void {
-    this.facade.save.next({
-      ...input,
-      start: new Date(input.start).getTime(),
-    });
   }
 }
 

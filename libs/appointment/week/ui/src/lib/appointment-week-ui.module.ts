@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule, Type } from '@angular/core';
+import { PushModule } from '@rx-angular/template';
 import {
   AppointmentCalendarComponent,
   AppointmentDaysComponent,
@@ -16,11 +17,11 @@ const COMPONENTS: Type<unknown>[] = [
   PointerComponent,
 ];
 
-const MODULES: Type<unknown>[] = [CommonModule];
+const MODULES: Type<unknown>[] = [CommonModule, PushModule];
 
 @NgModule({
   declarations: [COMPONENTS],
-  imports: [MODULES],
+  imports: [MODULES, PushModule],
   exports: [COMPONENTS, MODULES],
 })
 export class AppointmentWeekUiModule {}

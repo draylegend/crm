@@ -23,7 +23,7 @@ interface AppointmentStyle {
   templateUrl: './appointment-calendar.component.html',
 })
 export class AppointmentCalendarComponent {
-  @Input() appointments: AppointmentType[] | null = [];
+  @Input() appointments: AppointmentType[] = [];
   @Output() selectedChanges = new EventEmitter<AppointmentType>();
 
   @ViewChildren(AppointmentPreviewComponent)

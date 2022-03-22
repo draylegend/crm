@@ -19,7 +19,7 @@ import { type ClientType } from '@crm/client/api';
   templateUrl: './appointment-edit-form.component.html',
 })
 export class AppointmentEditFormComponent {
-  @Input() clients: ClientType[] | null = [];
+  @Input() clients: ClientType[] = [];
   @Output() readonly save = new EventEmitter<AppointmentInput>();
 
   form = this.fb.group({

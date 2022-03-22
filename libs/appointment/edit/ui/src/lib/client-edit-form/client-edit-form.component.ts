@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { ControlContainer, FormGroupName } from '@angular/forms';
+import { ClientType } from '@crm/client/api';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -8,4 +9,6 @@ import { ControlContainer, FormGroupName } from '@angular/forms';
   templateUrl: './client-edit-form.component.html',
   viewProviders: [{ provide: ControlContainer, useExisting: FormGroupName }],
 })
-export class ClientEditFormComponent {}
+export class ClientEditFormComponent {
+  @Input() clients: ClientType[] | null = [];
+}

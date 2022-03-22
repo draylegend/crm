@@ -10,6 +10,7 @@ import {
   type AppointmentInput,
   type AppointmentType,
 } from '@crm/appointment/api';
+import { type ClientType } from '@crm/client/api';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -18,6 +19,7 @@ import {
   templateUrl: './appointment-edit-form.component.html',
 })
 export class AppointmentEditFormComponent {
+  @Input() clients: ClientType[] | null = [];
   @Output() readonly save = new EventEmitter<AppointmentInput>();
 
   form = this.fb.group({

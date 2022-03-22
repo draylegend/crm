@@ -1,6 +1,9 @@
 <form (ngSubmit)="save.emit(form.value)" [formGroup]="form">
   <input formControlName="start" type="datetime-local" />
   <input formControlName="duration" type="number" />
-  <crm-client-edit-form formGroupName="client"></crm-client-edit-form>
+  <crm-client-edit-form
+    [clients]="clients"
+    formGroupName="client"
+  ></crm-client-edit-form>
   <button>Save</button>
 </form>

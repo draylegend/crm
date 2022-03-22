@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { AppointmentInput, type AppointmentType } from '@crm/appointment/api';
+import { ClientType } from '@crm/client/api';
+import { CLIENTS_GQL } from '@crm/client/domain';
 import { Apollo } from 'apollo-angular';
 import { exhaustMap, filter, map, Observable, Subject } from 'rxjs';
-import { ENTITIES_GQL, SAVE_GQL, SELECTED_GQL } from './graphql';
+import { ENTITIES_GQL, SAVE_GQL, SELECTED_GQL } from './gql';
 
 @Injectable()
 export class AppointmentFacade {
@@ -17,6 +19,11 @@ export class AppointmentFacade {
       }),
     ),
   );
+  readonly clients$ = this.apollo
+    .watchQuery<{ clients: ClientType[] }>({
+      query: CLIENTS_GQL,
+    })
+    .valueChanges.pipe(map(r => r.data?.clients));
 
   constructor(private readonly apollo: Apollo) {}
 

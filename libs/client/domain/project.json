@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/client/domain",
+  "sourceRoot": "libs/client/domain/src",
+  "prefix": "crm",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/client/domain"],
+      "options": {
+        "jestConfig": "libs/client/domain/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/client/domain/src/**/*.ts",
+          "libs/client/domain/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["scope:client type:domain"]
+}

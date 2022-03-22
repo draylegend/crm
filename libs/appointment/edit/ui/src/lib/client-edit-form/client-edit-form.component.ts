@@ -11,4 +11,6 @@ import { ClientType } from '@crm/client/api';
 })
 export class ClientEditFormComponent {
   @Input() clients: ClientType[] | null = [];
+
+  visible = false;
 }

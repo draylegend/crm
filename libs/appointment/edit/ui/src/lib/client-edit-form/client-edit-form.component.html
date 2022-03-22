@@ -1,4 +1,8 @@
-<input formControlName="firstName" />
-<ul>
+<input
+  (blur)="visible = false"
+  (focus)="visible = true"
+  formControlName="firstName"
+/>
+<ul *ngIf="visible">
   <li *ngFor="let client of clients">{{ client.firstName }}</li>
 </ul>

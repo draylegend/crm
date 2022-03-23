@@ -1,8 +1,9 @@
-<input
-  (blur)="focus$.next(false)"
-  (focus)="focus$.next(true)"
-  formControlName="firstName"
-/>
-<ul *ngIf="focus$ | push">
-  <li *ngFor="let client of filteredClients$ | push">{{ client.firstName }}</li>
+<input formControlName="firstName" />
+<ul>
+  <li
+    (click)="select(i)"
+    *ngFor="let client of filteredClients$ | push; index as i"
+  >
+    {{ client.firstName }}
+  </li>
 </ul>

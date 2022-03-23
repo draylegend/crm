@@ -1,14 +1,12 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+} from '@angular/core';
 import { ControlContainer, FormGroupName } from '@angular/forms';
 import { type ClientType } from '@crm/client/api';
-import {
-  BehaviorSubject,
-  map,
-  Observable,
-  pipe,
-  startWith,
-  UnaryFunction,
-} from 'rxjs';
+import { map, Observable, startWith } from 'rxjs';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -17,30 +15,25 @@ import {
   templateUrl: './client-edit-form.component.html',
   viewProviders: [{ provide: ControlContainer, useExisting: FormGroupName }],
 })
-export class ClientEditFormComponent {
+export class ClientEditFormComponent implements AfterViewInit {
+  @Input() clients: ClientType[] = [];
+
   filteredClients$!: Observable<ClientType[]>;
-  focus$ = new BehaviorSubject(false);
 
   constructor(private readonly group: FormGroupName) {}
 
-  @Input() set clients(value: ClientType[]) {
+  ngAfterViewInit(): void {
     this.filteredClients$ = this.group.control.valueChanges.pipe(
-      startWith(this.group.value.firstName),
-      this.#filter$(value),
-    );
-  }
-
-  #filter$(
-    clients: ClientType[],
-  ): UnaryFunction<Observable<unknown>, Observable<ClientType[]>> {
-    return pipe(
-      map(() =>
-        clients.filter(c =>
-          c.firstName
-            .toLowerCase()
-            .includes(this.group.value.firstName.toLowerCase()),
+      startWith(this.group.value),
+      map(search =>
+        this.clients.filter(c =>
+          c.firstName.toLowerCase().includes(search.firstName.toLowerCase()),
         ),
       ),
     );
+  }
+
+  select(i: number): void {
+    this.group.control.get('firstName')?.setValue(this.clients[i].firstName);
   }
 }

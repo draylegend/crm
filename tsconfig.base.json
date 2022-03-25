@@ -28,6 +28,7 @@
       "@crm/client/api": ["libs/client/api/src/index.ts"],
       "@crm/client/domain": ["libs/client/domain/src/index.ts"],
       "@crm/client/edit/ui": ["libs/client/edit/ui/src/index.ts"],
+      "@crm/core/ui": ["libs/core/ui/src/index.ts"],
       "@crm/shared/api": ["libs/shared/api/src/index.ts"]
     }
   },

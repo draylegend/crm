@@ -12,6 +12,7 @@ import {
 } from '@crm/appointment/domain';
 import { AppointmentEditFeature } from '@crm/appointment/edit/feature';
 import { AppointmentWeekUiModule } from '@crm/appointment/week/ui';
+import { AppFacade } from '@crm/shared/domain';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -23,7 +24,9 @@ export class AppointmentWeekComponent {
     public readonly facade: AppointmentFacade,
     private readonly el: ElementRef,
     private readonly router: Router,
+    readonly appFacade: AppFacade,
   ) {
+    appFacade.title$.next('Appointments');
     el.nativeElement.style.setProperty('--days', 7);
   }
 

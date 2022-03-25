@@ -1,1 +1,2 @@
-export * from './lib/shared-domain.module';
+export * from './lib/app.facade';
+export * from './lib/shared.domain';

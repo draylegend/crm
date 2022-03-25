@@ -1,6 +1,6 @@
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { AppModule } from './app/app.module';
+import { AppFeature } from './app/app.feature';
 import { environment } from './environments/environment';
 
 if (environment.production) {
@@ -8,5 +8,5 @@ if (environment.production) {
 }
 
 platformBrowserDynamic()
-  .bootstrapModule(AppModule)
+  .bootstrapModule(AppFeature)
   .catch(err => console.error(err));

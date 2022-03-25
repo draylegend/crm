@@ -46,16 +46,13 @@ export class AppointmentFacade {
       query: CLIENTS_GQL,
     })
     .valueChanges.pipe(map(r => r.data?.clients));
+  readonly appointments$ = this.apollo
+    .watchQuery<{ appointments: AppointmentType[] }>({
+      query: ENTITIES_GQL,
+    })
+    .valueChanges.pipe(map(r => r.data.appointments));
 
   constructor(private readonly apollo: Apollo) {}
-
-  entities$(): Observable<AppointmentType[]> {
-    return this.apollo
-      .watchQuery<{ appointments: AppointmentType[] }>({
-        query: ENTITIES_GQL,
-      })
-      .valueChanges.pipe(map(r => r.data.appointments));
-  }
 
   selected$(id: string): Observable<AppointmentType | undefined> {
     return this.apollo

@@ -19,10 +19,8 @@ import { AppointmentWeekUiModule } from '@crm/appointment/week/ui';
   templateUrl: './appointment-week.component.html',
 })
 export class AppointmentWeekComponent {
-  readonly appointments$ = this.facade.entities$();
-
   constructor(
-    private readonly facade: AppointmentFacade,
+    public readonly facade: AppointmentFacade,
     private readonly el: ElementRef,
     private readonly router: Router,
   ) {

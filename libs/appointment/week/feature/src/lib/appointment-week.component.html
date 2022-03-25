@@ -11,7 +11,7 @@
 
   <crm-appointment-calendar
     (selectedChanges)="navigate($event)"
-    [appointments]="appointments$ | push"
+    [appointments]="facade.appointments$ | push"
   ></crm-appointment-calendar>
 </div>
 

@@ -5,7 +5,7 @@ import {
   Input,
 } from '@angular/core';
 import { ControlContainer, FormGroupName } from '@angular/forms';
-import { type ClientType } from '@crm/client/api';
+import { ClientInput, type ClientType } from '@crm/client/api';
 import { map, Observable, startWith } from 'rxjs';
 
 @Component({
@@ -17,7 +17,6 @@ import { map, Observable, startWith } from 'rxjs';
 })
 export class ClientEditFormComponent implements AfterViewInit {
   @Input() clients: ClientType[] = [];
-
   filteredClients$!: Observable<ClientType[]>;
   selectedIndex = -1;
 
@@ -35,7 +34,11 @@ export class ClientEditFormComponent implements AfterViewInit {
   }
 
   select(i: number): void {
-    this.group.control.get('firstName')?.setValue(this.clients[i].firstName);
+    this.group.control.setValue(this.clients[i]);
+  }
+
+  keydown(filtered: ClientType[]): void {
+    !filtered.length && this.group.control.get('id')?.setValue(undefined);
   }
 
   arrowUp(): void {
@@ -52,8 +55,12 @@ export class ClientEditFormComponent implements AfterViewInit {
 
   enter(e: Event, filtered: ClientType[]): void {
     e.preventDefault();
-    this.group.control
-      .get('firstName')
-      ?.setValue(filtered[this.selectedIndex].firstName);
+
+    const client: ClientType | ClientInput =
+      filtered.length > 0
+        ? filtered[this.selectedIndex]
+        : { firstName: this.group.value.firstName };
+
+    this.group.control?.setValue(client);
   }
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AppointmentInput, type AppointmentType } from '@crm/appointment/api';
-import { ClientType } from '@crm/client/api';
+import { type ClientType } from '@crm/client/api';
 import { CLIENTS_GQL } from '@crm/client/domain';
 import { Apollo } from 'apollo-angular';
 import { exhaustMap, filter, map, Observable, Subject } from 'rxjs';
@@ -11,10 +11,32 @@ export class AppointmentFacade {
   readonly save = new Subject<AppointmentInput>();
   readonly save$ = this.save.pipe(
     exhaustMap(entity =>
-      this.apollo.mutate<unknown, { entity: AppointmentInput }>({
+      this.apollo.mutate<
+        { appointmentSave: AppointmentType },
+        { entity: AppointmentInput }
+      >({
         mutation: SAVE_GQL,
         variables: {
           entity: removeTypename(entity),
+        },
+        update: (cache, result) => {
+          const client = result.data?.appointmentSave.client;
+          let clients =
+            cache.readQuery<{ clients: ClientType[] }>({
+              query: CLIENTS_GQL,
+            })?.clients || [];
+
+          if (client) {
+            if (!entity.client.id) {
+              clients = [...clients, client];
+              clients.sort((a, b) => a.firstName.localeCompare(b.firstName));
+            }
+
+            cache.writeQuery<{ clients: ClientType[] }>({
+              query: CLIENTS_GQL,
+              data: { clients: clients },
+            });
+          }
         },
       }),
     ),

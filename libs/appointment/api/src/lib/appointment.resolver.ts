@@ -13,20 +13,20 @@ export class AppointmentResolver {
   }
 
   @Mutation(() => AppointmentType)
-  appointmentSave(@Args('entity') entity: AppointmentInput) {
+  async appointmentSave(@Args('entity') entity: AppointmentInput) {
+    const client = await this.p.client.upsert({
+      where: { id: entity.client.id || '' },
+      create: { firstName: entity.client.firstName },
+      update: { id: entity.client.id, firstName: entity.client.firstName },
+    });
+
     return this.p.appointment.upsert({
       where: { id: entity.id },
       create: {
         start: entity.start,
         duration: entity.duration,
         client: {
-          connectOrCreate: {
-            create: {
-              id: entity.client.id,
-              firstName: entity.client.firstName,
-            },
-            where: { id: entity.client.id },
-          },
+          connect: { id: client.id },
         },
       },
       update: {
@@ -34,17 +34,7 @@ export class AppointmentResolver {
         start: entity.start,
         duration: entity.duration,
         client: {
-          upsert: {
-            create: entity.client,
-            update: entity.client,
-          },
-          // connectOrCreate: {
-          //   create: {
-          //     id: entity.client.id,
-          //     firstName: entity.client.firstName,
-          //   },
-          //   where: { id: entity.client.id },
-          // },
+          connect: { id: client.id },
         },
       },
       select: { id: true, start: true, client: true, duration: true },

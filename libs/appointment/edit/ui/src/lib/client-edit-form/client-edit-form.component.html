@@ -1,4 +1,5 @@
 <input
+  (keydown)="keydown(filtered)"
   (keydown.arrowDown)="arrowDown()"
   (keydown.arrowUp)="arrowUp()"
   (keydown.enter)="enter($event, filtered)"

@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { ApolloClientOptions, InMemoryCache } from '@apollo/client/core';
 import { appointmentEditTypePolicies } from '@crm/appointment/domain';
+import { CoreUi } from '@crm/core/ui';
 import { APOLLO_OPTIONS } from 'apollo-angular';
 import { HttpLink } from 'apollo-angular/http';
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { AppComponent } from './app.component';
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    CoreUi,
     HttpClientModule,
     RouterModule.forRoot([
       {

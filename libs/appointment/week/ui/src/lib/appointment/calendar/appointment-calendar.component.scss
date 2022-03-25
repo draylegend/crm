@@ -1,4 +1,7 @@
 :host {
+  background: linear-gradient(lightgray 1px, transparent 1px),
+    linear-gradient(90deg, lightgray 1px, white 1px);
+  background-size: 200px 60px;
   display: grid;
   grid-template-columns: repeat(var(--days), 1fr);
   position: relative;

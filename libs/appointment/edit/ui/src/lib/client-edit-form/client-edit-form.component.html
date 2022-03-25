@@ -1,8 +1,13 @@
-<input formControlName="firstName" />
+<input
+  (keydown.arrowDown)="arrowDown()"
+  (keydown.arrowUp)="arrowUp()"
+  formControlName="firstName"
+/>
 <ul>
   <li
     (click)="select(i)"
     *ngFor="let client of filteredClients$ | push; index as i"
+    [class.selected]="selectedIndex === i"
   >
     {{ client.firstName }}
   </li>

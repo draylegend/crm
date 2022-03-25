@@ -19,6 +19,7 @@ export class ClientEditFormComponent implements AfterViewInit {
   @Input() clients: ClientType[] = [];
 
   filteredClients$!: Observable<ClientType[]>;
+  selectedIndex = -1;
 
   constructor(private readonly group: FormGroupName) {}
 
@@ -35,5 +36,18 @@ export class ClientEditFormComponent implements AfterViewInit {
 
   select(i: number): void {
     this.group.control.get('firstName')?.setValue(this.clients[i].firstName);
+  }
+
+  arrowUp(): void {
+    this.selectedIndex <= 0
+      ? (this.selectedIndex = this.clients.length - 1)
+      : this.selectedIndex--;
+  }
+
+  arrowDown(): void {
+    this.selectedIndex >= this.clients.length - 1
+      ? (this.selectedIndex = 0)
+      : this.selectedIndex++;
+    console.log(this.selectedIndex);
   }
 }

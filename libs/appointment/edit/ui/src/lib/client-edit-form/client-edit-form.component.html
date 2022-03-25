@@ -1,6 +1,8 @@
 <input
   (keydown.arrowDown)="arrowDown()"
   (keydown.arrowUp)="arrowUp()"
+  (keydown.enter)="enter($event, filtered)"
+  *rxLet="filteredClients$; let filtered"
   formControlName="firstName"
 />
 <ul>

@@ -48,6 +48,12 @@ export class ClientEditFormComponent implements AfterViewInit {
     this.selectedIndex >= this.clients.length - 1
       ? (this.selectedIndex = 0)
       : this.selectedIndex++;
-    console.log(this.selectedIndex);
+  }
+
+  enter(e: Event, filtered: ClientType[]): void {
+    e.preventDefault();
+    this.group.control
+      .get('firstName')
+      ?.setValue(filtered[this.selectedIndex].firstName);
   }
 }

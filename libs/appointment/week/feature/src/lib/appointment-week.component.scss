@@ -1,8 +1,4 @@
 :host {
-  overflow: hidden;
-}
-
-header + div {
   --days: 7;
   --pointerLeft: 0;
   --pointerTop: 20;
@@ -14,23 +10,14 @@ header + div {
   grid-gap: 16px;
 }
 
-.add {
+div:first-of-type {
   background: white;
-  display: flex;
   position: sticky;
   top: 0;
   left: 0;
   z-index: 2;
 }
 
-button {
-  flex-grow: 1;
-  border-radius: 50%;
-  margin: 16px 0 0 16px;
-}
-
-header {
-  grid-column-start: 1;
-  grid-column-end: var(--days);
-  grid-row-start: 1;
+router-outlet {
+  display: none;
 }

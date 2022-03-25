@@ -1,18 +1,12 @@
-<header>Appointments</header>
+<div></div>
 
-<div>
-  <div class="add">
-    <button>+</button>
-  </div>
+<crm-appointment-days></crm-appointment-days>
 
-  <crm-appointment-days></crm-appointment-days>
+<crm-appointment-time></crm-appointment-time>
 
-  <crm-appointment-time></crm-appointment-time>
-
-  <crm-appointment-calendar
-    (selectedChanges)="navigate($event)"
-    [appointments]="facade.appointments$ | push"
-  ></crm-appointment-calendar>
-</div>
+<crm-appointment-calendar
+  (selectedChanges)="navigate($event)"
+  [appointments]="facade.appointments$ | push"
+></crm-appointment-calendar>
 
 <router-outlet></router-outlet>

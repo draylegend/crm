@@ -13,6 +13,7 @@
     "client-edit-ui": "libs/client/edit/ui",
     "core-ui": "libs/core/ui",
     "shared-api": "libs/shared/api",
+    "shared-domain": "libs/shared/domain",
     "web-admin": "apps/web-admin",
     "web-admin-e2e": "apps/web-admin-e2e"
   }

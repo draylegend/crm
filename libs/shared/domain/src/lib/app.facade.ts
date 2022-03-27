@@ -1,10 +1,13 @@
 import { DOCUMENT } from '@angular/common';
-import { Inject, Injectable } from '@angular/core';
+import { Inject, Injectable, TemplateRef } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable()
 export class AppFacade {
   readonly title$ = new BehaviorSubject('');
+  readonly toolbarActions$ = new BehaviorSubject<TemplateRef<unknown> | null>(
+    null,
+  );
 
   constructor(@Inject(DOCUMENT) private readonly doc: Document) {}
 

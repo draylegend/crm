@@ -1,3 +1,8 @@
 <div *ngFor="let day of displayDays">
   {{ day.date }} {{ dayNames[day.day] }}
 </div>
+
+<ng-template #toolbarActions>
+  <button>Prev week</button>
+  <button>Next week</button>
+</ng-template>

@@ -16,9 +16,9 @@ import { AppFacade } from '@crm/shared/domain';
 })
 export class AppointmentWeekComponent {
   constructor(
+    public readonly appFacade: AppFacade,
     public readonly facade: AppointmentFacade,
     private readonly router: Router,
-    readonly appFacade: AppFacade,
   ) {
     appFacade.title$.next('Appointments');
   }

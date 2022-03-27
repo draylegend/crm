@@ -7,6 +7,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   templateUrl: './appointment-days.component.html',
 })
 export class AppointmentDaysComponent {
+  readonly dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   displayDays!: { date: number; day: number }[];
 
   @Input() set days(val: number[]) {

@@ -1,1 +1,3 @@
-<div *ngFor="let day of displayDays">{{ day.date }}</div>
+<div *ngFor="let day of displayDays">
+  {{ day.date }} {{ dayNames[day.day] }}
+</div>

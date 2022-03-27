@@ -3,6 +3,6 @@
 </div>
 
 <ng-template #toolbarActions>
-  <button>Prev week</button>
-  <button>Next week</button>
+  <button (click)="weekNumber.emit(-1)">Prev week</button>
+  <button (click)="weekNumber.emit(1)">Next week</button>
 </ng-template>

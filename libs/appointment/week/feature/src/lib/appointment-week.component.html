@@ -1,6 +1,7 @@
-<div></div>
+<div>{{ facade.weekNumber$ | push }}</div>
 
 <crm-appointment-days
+  (weekNumber)="facade.weekNumberChanges($event)"
   [days]="facade.days$ | push"
   [toolbar$]="appFacade.toolbarActions$"
 ></crm-appointment-days>

@@ -4,11 +4,21 @@ import { type ClientType } from '@crm/client/api';
 import { CLIENTS_GQL } from '@crm/client/domain';
 import { AppFacade } from '@crm/shared/domain';
 import { Apollo } from 'apollo-angular';
-import { exhaustMap, filter, map, Observable, of, Subject, tap } from 'rxjs';
+import {
+  BehaviorSubject,
+  exhaustMap,
+  filter,
+  map,
+  Observable,
+  of,
+  Subject,
+  tap,
+} from 'rxjs';
 import { ENTITIES_GQL, SAVE_GQL, SELECTED_GQL } from './gql';
 
 @Injectable()
 export class AppointmentFacade {
+  readonly weekNumber$ = new BehaviorSubject<number>(1);
   readonly days$ = of([0, 1, 2, 3, 4, 5, 6]).pipe(
     tap(days => this.appFacade.setProp('days', days.length)),
   );
@@ -73,6 +83,20 @@ export class AppointmentFacade {
         filter(r => !!r.data?.appointmentSelected),
         map(r => r.data?.appointmentSelected),
       );
+  }
+
+  weekNumberChanges(direction: number): void {
+    let nr = this.weekNumber$.getValue() + direction;
+
+    if (nr > 52) {
+      nr = 1;
+    }
+
+    if (nr < 1) {
+      nr = 52;
+    }
+
+    this.weekNumber$.next(nr);
   }
 }
 

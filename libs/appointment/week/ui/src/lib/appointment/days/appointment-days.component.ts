@@ -1,7 +1,9 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  EventEmitter,
   Input,
+  Output,
   TemplateRef,
   ViewChild,
 } from '@angular/core';
@@ -15,6 +17,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class AppointmentDaysComponent {
   @Input() toolbar$!: BehaviorSubject<TemplateRef<unknown> | null>;
+  @Output() weekNumber = new EventEmitter<number>();
 
   readonly dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   displayDays!: { date: number; day: number }[];

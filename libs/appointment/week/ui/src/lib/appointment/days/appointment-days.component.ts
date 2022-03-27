@@ -10,6 +10,9 @@ export class AppointmentDaysComponent {
   displayDays!: { date: number; day: number }[];
 
   @Input() set days(val: number[]) {
-    this.displayDays = val.map(day => ({ day, date: day }));
+    const d: Date = new Date();
+    const firstDay = d.getDate() - d.getDay();
+
+    this.displayDays = val.map(day => ({ day, date: firstDay + day }));
   }
 }

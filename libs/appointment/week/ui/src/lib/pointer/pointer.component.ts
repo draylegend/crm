@@ -1,6 +1,6 @@
-import { ChangeDetectionStrategy, Component, ElementRef } from '@angular/core';
-import { timer } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { AppFacade } from '@crm/shared/domain';
+import { tap, timer } from 'rxjs';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -10,16 +10,14 @@ import { tap } from 'rxjs/operators';
 })
 export class PointerComponent {
   readonly pointer$ = timer(0, 1000).pipe(tap(() => this.#updatePointer()));
+  readonly #today = new Date();
 
-  constructor(private readonly el: ElementRef) {}
+  constructor(private readonly appFacade: AppFacade) {}
 
   #updatePointer(): void {
-    const d = new Date();
+    const minutes = this.#today.getHours() * 60 + this.#today.getMinutes();
 
-    this.el.nativeElement.style.setProperty('--pointerLeft', d.getDay());
-    this.el.nativeElement.style.setProperty(
-      '--pointerTop',
-      d.getHours() * 60 + d.getMinutes(),
-    );
+    this.appFacade.setProp('pointerLeft', this.#today.getDay());
+    this.appFacade.setProp('pointerTop', minutes);
   }
 }

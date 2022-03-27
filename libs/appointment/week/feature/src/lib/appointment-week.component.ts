@@ -1,9 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  ElementRef,
-  NgModule,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, NgModule } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { type AppointmentType } from '@crm/appointment/api';
 import {
@@ -22,12 +17,10 @@ import { AppFacade } from '@crm/shared/domain';
 export class AppointmentWeekComponent {
   constructor(
     public readonly facade: AppointmentFacade,
-    private readonly el: ElementRef,
     private readonly router: Router,
     readonly appFacade: AppFacade,
   ) {
     appFacade.title$.next('Appointments');
-    el.nativeElement.style.setProperty('--days', 7);
   }
 
   navigate(appointment: AppointmentType): void {

@@ -2,12 +2,16 @@ import { Injectable } from '@angular/core';
 import { AppointmentInput, type AppointmentType } from '@crm/appointment/api';
 import { type ClientType } from '@crm/client/api';
 import { CLIENTS_GQL } from '@crm/client/domain';
+import { AppFacade } from '@crm/shared/domain';
 import { Apollo } from 'apollo-angular';
-import { exhaustMap, filter, map, Observable, Subject } from 'rxjs';
+import { exhaustMap, filter, map, Observable, of, Subject, tap } from 'rxjs';
 import { ENTITIES_GQL, SAVE_GQL, SELECTED_GQL } from './gql';
 
 @Injectable()
 export class AppointmentFacade {
+  readonly days$ = of([0, 1, 2, 3, 4, 5, 6]).pipe(
+    tap(days => this.appFacade.setProp('days', days.length)),
+  );
   readonly save = new Subject<AppointmentInput>();
   readonly save$ = this.save.pipe(
     exhaustMap(entity =>
@@ -52,7 +56,10 @@ export class AppointmentFacade {
     })
     .valueChanges.pipe(map(r => r.data.appointments));
 
-  constructor(private readonly apollo: Apollo) {}
+  constructor(
+    private readonly apollo: Apollo,
+    private readonly appFacade: AppFacade,
+  ) {}
 
   selected$(id: string): Observable<AppointmentType | undefined> {
     return this.apollo

@@ -44,7 +44,7 @@ export class AppointmentCalendarComponent {
     const date = new Date(a.start);
 
     return {
-      left: `calc(100% / 7 * ${date.getDay()})`,
+      left: `calc(100% / var(--days) * ${date.getDay()})`,
       'top.px': date.getHours() * 60 + date.getMinutes(),
     };
   }

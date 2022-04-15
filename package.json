@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "nx",
-    "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main && prisma db push && prisma db seed && prisma studio",
+    "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main && node prisma/setup.js",
     "start": "nx serve",
     "start.api": "nx serve api",
     "build": "nx build",

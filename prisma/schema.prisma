@@ -19,4 +19,6 @@ model Client {
   id          String        @id @unique @default(cuid())
   firstName   String
   appointment Appointment[]
+
+  @@unique([firstName])
 }

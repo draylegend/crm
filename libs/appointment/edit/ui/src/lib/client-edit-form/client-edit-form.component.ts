@@ -17,6 +17,7 @@ import { map, Observable, startWith } from 'rxjs';
 })
 export class ClientEditFormComponent implements AfterViewInit {
   @Input() clients: ClientType[] = [];
+
   filteredClients$!: Observable<ClientType[]>;
   selectedIndex = -1;
 

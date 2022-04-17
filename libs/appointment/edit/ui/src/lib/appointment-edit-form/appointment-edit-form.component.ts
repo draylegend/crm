@@ -5,12 +5,13 @@ import {
   Input,
   Output,
 } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import {
   type AppointmentInput,
   type AppointmentType,
 } from '@crm/appointment/api';
 import { type ClientType } from '@crm/client/api';
+import { map } from 'rxjs';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -20,11 +21,11 @@ import { type ClientType } from '@crm/client/api';
 })
 export class AppointmentEditFormComponent {
   @Input() clients: ClientType[] = [];
-  @Output() readonly save = new EventEmitter<AppointmentInput>();
+  @Output() readonly saveChange = new EventEmitter<AppointmentInput>();
 
   form = this.fb.group({
     id: '',
-    start: 2,
+    start: ['', Validators.required],
     duration: 30,
     __typename: 'AppointmentType',
     client: this.fb.group({
@@ -33,6 +34,9 @@ export class AppointmentEditFormComponent {
       __typename: 'ClientType',
     }),
   });
+  valid$ = this.form.valueChanges.pipe(
+    map(() => this.form.pristine || this.form.invalid),
+  );
 
   constructor(private readonly fb: FormBuilder) {}
 
@@ -41,6 +45,12 @@ export class AppointmentEditFormComponent {
       ...value,
       start: this.#getDateTime(value.start),
     });
+  }
+
+  save(): void {
+    this.saveChange.emit(this.form.value);
+    this.form.reset(this.form.value);
+    console.log(this.form);
   }
 
   #getDateTime(value: number): string {

@@ -8,6 +8,7 @@
     "appointment-edit-ui": "libs/appointment/edit/ui",
     "appointment-week-feature": "libs/appointment/week/feature",
     "appointment-week-ui": "libs/appointment/week/ui",
+    "auth-api": "libs/auth/api",
     "client-api": "libs/client/api",
     "client-domain": "libs/client/domain",
     "client-edit-ui": "libs/client/edit/ui",

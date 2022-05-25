@@ -1,3 +1,4 @@
+import { PrismaService } from '@crm/shared/api';
 import { Test, TestingModule } from '@nestjs/testing';
 import { AppointmentResolver } from './appointment.resolver';
 
@@ -6,7 +7,7 @@ describe('AppointmentResolver', () => {
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [AppointmentResolver],
+      providers: [AppointmentResolver, PrismaService],
     }).compile();
 
     resolver = module.get<AppointmentResolver>(AppointmentResolver);

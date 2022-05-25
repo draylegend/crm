@@ -6,7 +6,7 @@ import {
   AppointmentFacade,
 } from '@crm/appointment/domain';
 import { AppointmentEditFeature } from '@crm/appointment/edit/feature';
-import { AppointmentWeekUiModule } from '@crm/appointment/week/ui';
+import { AppointmentWeekUi } from '@crm/appointment/week/ui';
 import { AppFacade } from '@crm/shared/domain';
 
 @Component({
@@ -32,7 +32,7 @@ export class AppointmentWeekComponent {
   declarations: [AppointmentWeekComponent],
   imports: [
     AppointmentDomainModule,
-    AppointmentWeekUiModule,
+    AppointmentWeekUi,
     RouterModule.forChild([
       {
         path: '',

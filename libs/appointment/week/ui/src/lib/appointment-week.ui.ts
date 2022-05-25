@@ -21,7 +21,7 @@ const MODULES: Type<unknown>[] = [CommonModule, PushModule];
 
 @NgModule({
   declarations: [COMPONENTS],
-  imports: [MODULES, PushModule],
+  imports: [MODULES],
   exports: [COMPONENTS, MODULES],
 })
-export class AppointmentWeekUiModule {}
+export class AppointmentWeekUi {}

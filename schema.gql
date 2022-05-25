@@ -2,6 +2,10 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type TokensObject {
+  accessToken: String!
+}
+
 type ClientType {
   id: String!
   firstName: String!
@@ -16,6 +20,7 @@ type AppointmentType {
 
 type Query {
   appointments: [AppointmentType!]!
+  login(email: String!, password: String!): TokensObject!
   clients: [ClientType!]!
 }
 

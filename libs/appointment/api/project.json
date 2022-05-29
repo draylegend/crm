@@ -1,5 +1,4 @@
 {
-  "root": "libs/appointment/api",
   "sourceRoot": "libs/appointment/api/src",
   "targets": {
     "lint": {
@@ -13,7 +12,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/libs/appointment/api"],
       "options": {
-        "jestConfig": "libs/appointment/api/jest.config.js",
+        "jestConfig": "libs/appointment/api/jest.config.ts",
         "passWithNoTests": true
       }
     }

@@ -1,6 +1,5 @@
 {
   "projectType": "application",
-  "root": "apps/web-admin",
   "sourceRoot": "apps/web-admin/src",
   "prefix": "crm",
   "targets": {
@@ -88,7 +87,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/apps/web-admin"],
       "options": {
-        "jestConfig": "apps/web-admin/jest.config.js",
+        "jestConfig": "apps/web-admin/jest.config.ts",
         "passWithNoTests": true
       }
     }

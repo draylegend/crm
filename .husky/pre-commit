@@ -3,5 +3,5 @@
 
 npx nx format
 git add .
-npx nx lint
-npx nx test
+npx nx affected:lint
+npx nx affected:test

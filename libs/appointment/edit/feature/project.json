@@ -1,6 +1,5 @@
 {
   "projectType": "library",
-  "root": "libs/appointment/edit/feature",
   "sourceRoot": "libs/appointment/edit/feature/src",
   "prefix": "crm",
   "targets": {
@@ -8,7 +7,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/libs/appointment/edit/feature"],
       "options": {
-        "jestConfig": "libs/appointment/edit/feature/jest.config.js",
+        "jestConfig": "libs/appointment/edit/feature/jest.config.ts",
         "passWithNoTests": true
       }
     },

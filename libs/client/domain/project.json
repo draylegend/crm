@@ -1,6 +1,5 @@
 {
   "projectType": "library",
-  "root": "libs/client/domain",
   "sourceRoot": "libs/client/domain/src",
   "prefix": "crm",
   "targets": {
@@ -8,7 +7,7 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/libs/client/domain"],
       "options": {
-        "jestConfig": "libs/client/domain/jest.config.js",
+        "jestConfig": "libs/client/domain/jest.config.ts",
         "passWithNoTests": true
       }
     },

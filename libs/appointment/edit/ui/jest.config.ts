@@ -1,5 +1,6 @@
-module.exports = {
-  displayName: 'client-edit-ui',
+/* eslint-disable */
+export default {
+  displayName: 'appointment-edit-ui',
   preset: '../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -8,7 +9,7 @@ module.exports = {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../../../coverage/libs/client/edit/ui',
+  coverageDirectory: '../../../../coverage/libs/appointment/edit/ui',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },

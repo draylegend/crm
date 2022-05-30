@@ -16,9 +16,10 @@
   },
   "tasksRunnerOptions": {
     "default": {
-      "runner": "@nrwl/workspace/tasks-runners/default",
+      "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "accessToken": "ZDYyYjkwYzctNGNhYS00ZWQzLWJhYjctN2U3ZDI4MDg4YzU4fHJlYWQtd3JpdGU="
       }
     }
   },

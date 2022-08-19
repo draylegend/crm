@@ -1,4 +1,5 @@
 import { PrismaService } from '@crm/shared/api';
+import { JwtService } from '@nestjs/jwt';
 import { Test, TestingModule } from '@nestjs/testing';
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
@@ -9,7 +10,7 @@ describe('AuthController', () => {
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [AuthController],
-      providers: [AuthService, PrismaService],
+      providers: [AuthService, JwtService, PrismaService],
     }).compile();
 
     controller = module.get<AuthController>(AuthController);

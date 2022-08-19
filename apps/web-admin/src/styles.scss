@@ -1,3 +1,20 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$web-admin-primary: mat.define-palette(mat.$indigo-palette);
+$web-admin-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$web-admin-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $web-admin-primary,
+      accent: $web-admin-accent,
+    ),
+  )
+);
+
+@include mat.all-component-themes($web-admin-theme);
+
 html,
 body,
 app-root {
@@ -6,4 +23,5 @@ app-root {
   flex-grow: 1;
   height: 100%;
   margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
 }

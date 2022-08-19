@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@crm/auth/api": ["libs/auth/api/src/index.ts"]
+      "@crm/auth/api": ["libs/auth/api/src/index.ts"],
+      "@crm/shared/api": ["libs/shared/api/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

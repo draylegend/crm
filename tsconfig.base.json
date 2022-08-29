@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@crm/auth/api": ["libs/auth/api/src/index.ts"],
+      "@crm/auth/feature": ["libs/auth/feature/src/index.ts"],
       "@crm/shared/api": ["libs/shared/api/src/index.ts"]
     }
   },

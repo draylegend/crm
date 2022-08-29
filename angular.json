@@ -4,6 +4,7 @@
   "projects": {
     "api": "apps/api",
     "auth-api": "libs/auth/api",
+    "auth-feature": "libs/auth/feature",
     "shared-api": "libs/shared/api",
     "web-admin": "apps/web-admin",
     "web-admin-e2e": "apps/web-admin-e2e"

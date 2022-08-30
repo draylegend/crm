@@ -1,16 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import {
-  NonNullableFormBuilder,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-
-const EMAIL_PATTERN = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+import { LoginFacade } from '@crm/auth/domain';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -25,16 +20,8 @@ const EMAIL_PATTERN = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
     MatInputModule,
     ReactiveFormsModule,
   ],
+  providers: [LoginFacade],
 })
 export class LoginComponent {
-  form = this.fb.group({
-    email: ['', [Validators.required, Validators.pattern(EMAIL_PATTERN)]],
-    password: ['', [Validators.required]],
-  });
-
-  constructor(private fb: NonNullableFormBuilder) {}
-
-  login(): void {
-    console.log(this.form.value);
-  }
+  constructor(public facade: LoginFacade) {}
 }

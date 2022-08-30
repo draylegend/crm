@@ -17,7 +17,8 @@ $web-admin-theme: mat.define-light-theme(
 
 html,
 body,
-app-root {
+app-root,
+ng-component {
   display: flex;
   flex-direction: column;
   flex-grow: 1;

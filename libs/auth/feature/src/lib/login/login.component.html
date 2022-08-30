@@ -1,1 +1,25 @@
-<p>login works!</p>
+<form (ngSubmit)="login()" [formGroup]="form">
+  <mat-card>
+    <mat-card-title>Login</mat-card-title>
+
+    <mat-card-content>
+      <mat-form-field>
+        <mat-icon matPrefix>email</mat-icon>
+        <input autofocus formControlName="email" matInput placeholder="Email" />
+        <mat-error *ngFor="let e of form.controls.email.errors | keyvalue">
+          {{ e.key }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-icon matPrefix>lock</mat-icon>
+        <input formControlName="password" matInput placeholder="Password" />
+        <mat-error *ngFor="let e of form.controls.password.errors | keyvalue">
+          {{ e.key }}
+        </mat-error>
+      </mat-form-field>
+
+      <button color="primary" mat-flat-button>Submit</button>
+    </mat-card-content>
+  </mat-card>
+</form>

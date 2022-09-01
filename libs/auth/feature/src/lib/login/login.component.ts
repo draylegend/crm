@@ -6,7 +6,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { RouterModule } from '@angular/router';
-import { LoginFacade, LoginService } from '@crm/auth/domain';
+import { LoginFacade, AuthService } from '@crm/auth/domain';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -22,7 +22,7 @@ import { LoginFacade, LoginService } from '@crm/auth/domain';
     ReactiveFormsModule,
     RouterModule,
   ],
-  providers: [LoginFacade, LoginService],
+  providers: [AuthService, LoginFacade],
 })
 export class LoginComponent {
   constructor(public facade: LoginFacade) {}

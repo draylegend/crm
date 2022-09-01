@@ -1,1 +1,69 @@
-<p>register works!</p>
+<form (ngSubmit)="facade.submit()" [formGroup]="facade.form">
+  <mat-card>
+    <mat-card-title>Register</mat-card-title>
+
+    <mat-card-content>
+      <mat-form-field>
+        <input
+          autofocus
+          formControlName="firstName"
+          matInput
+          placeholder="First name"
+        />
+        <mat-error
+          *ngFor="let e of facade.form.controls.firstName.errors | keyvalue"
+        >
+          {{ e.key }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input formControlName="lastName" matInput placeholder="Last name" />
+        <mat-error
+          *ngFor="let e of facade.form.controls.lastName.errors | keyvalue"
+        >
+          {{ e.key }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-icon matPrefix>email</mat-icon>
+        <input formControlName="email" matInput placeholder="Email" />
+        <mat-error
+          *ngFor="let e of facade.form.controls.email.errors | keyvalue"
+        >
+          {{ e.key }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-icon matPrefix>lock</mat-icon>
+        <input
+          formControlName="password"
+          matInput
+          placeholder="Password"
+          type="password"
+        />
+        <mat-error
+          *ngFor="let e of facade.form.controls.password.errors | keyvalue"
+        >
+          {{ e.key }}
+        </mat-error>
+      </mat-form-field>
+
+      <p *ngIf="facade.error$ | async as error" class="mat-error">
+        {{ error }}
+      </p>
+
+      <button
+        [disabled]="(facade.submitting$ | async) || facade.form.invalid"
+        color="primary"
+        mat-flat-button
+      >
+        Submit
+      </button>
+
+      <a mat-button routerLink="/auth/login">Login</a>
+    </mat-card-content>
+  </mat-card>
+</form>

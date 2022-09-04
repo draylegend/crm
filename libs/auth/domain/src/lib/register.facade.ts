@@ -1,13 +1,16 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { NonNullableFormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import {
   catchError,
+  from,
   map,
   Observable,
   ReplaySubject,
   shareReplay,
   switchMap,
+  tap,
 } from 'rxjs';
 import { AuthService } from './auth.service';
 import { State } from './auth.types';
@@ -33,12 +36,14 @@ export class RegisterFacade {
       ),
     ),
     shareReplay(),
+    tap(() => from(this.router.navigate([], { replaceUrl: true }))),
   );
   submitting$ = this.state$.pipe(map(s => s.submitDisabled));
   error$ = this.state$.pipe(map(s => s.error));
 
   constructor(
     private fb: NonNullableFormBuilder,
+    private router: Router,
     private service: AuthService,
   ) {}
 

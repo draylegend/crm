@@ -40,7 +40,13 @@
         Submit
       </button>
 
-      <a mat-button routerLink="/auth/register">Register</a>
+      <button
+        [disabled]="facade.submitting$ | async"
+        mat-button
+        routerLink="/auth/register"
+      >
+        Register
+      </button>
     </mat-card-content>
   </mat-card>
 </form>

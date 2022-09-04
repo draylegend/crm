@@ -3,12 +3,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { Expert } from '@prisma/client';
 import { hash } from 'argon2';
-import {
-  AuthResponse,
-  LoginInput,
-  LoginResponse,
-  RegisterInput,
-} from './types';
+import { AuthResponse, LoginInput, RegisterInput } from './types';
 
 @Injectable()
 export class AuthService {
@@ -26,15 +21,10 @@ export class AuthService {
 
     delete (found as Partial<Expert>).password;
 
-    return {
-      accessToken: this.jwtService.sign({
-        id: found.id,
-        email: found.email,
-      }),
-    };
+    return this.#sign(found);
   }
 
-  async login(input: LoginInput): Promise<LoginResponse> {
+  async login(input: LoginInput): Promise<AuthResponse> {
     const found = await this.p.expert.findUnique({
       where: { email: input.email },
     });
@@ -45,6 +35,15 @@ export class AuthService {
 
     delete (found as Partial<Expert>).password;
 
-    return found;
+    return this.#sign(found);
+  }
+
+  #sign(found: Expert): { accessToken: string } {
+    return {
+      accessToken: this.jwtService.sign({
+        id: found.id,
+        email: found.email,
+      }),
+    };
   }
 }

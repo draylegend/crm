@@ -1,12 +1,11 @@
 import {
-  HTTP_INTERCEPTORS,
   HttpEvent,
   HttpHandler,
   HttpHeaders,
   HttpInterceptor,
   HttpRequest,
 } from '@angular/common/http';
-import { ClassProvider, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable()
@@ -24,9 +23,3 @@ export class AccessTokenInterceptor implements HttpInterceptor {
     );
   }
 }
-
-export const accessTokenInterceptor: ClassProvider = {
-  provide: HTTP_INTERCEPTORS,
-  useClass: AccessTokenInterceptor,
-  multi: true,
-};

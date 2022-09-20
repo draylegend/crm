@@ -4,11 +4,14 @@ import {
   HttpInterceptor,
   HttpRequest,
 } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
+import { ENV } from '@crm/shared/domain';
 import { Observable } from 'rxjs';
 
 @Injectable()
 export class ApiInterceptor implements HttpInterceptor {
+  #env = inject(ENV);
+
   intercept(
     req: HttpRequest<unknown>,
     next: HttpHandler,
@@ -17,6 +20,6 @@ export class ApiInterceptor implements HttpInterceptor {
       return next.handle(req);
     }
 
-    return next.handle(req.clone({ url: `api/${req.url}` }));
+    return next.handle(req.clone({ url: `${this.#env.api}${req.url}` }));
   }
 }

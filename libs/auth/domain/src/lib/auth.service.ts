@@ -8,16 +8,10 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   login$(input: Partial<LoginInput>): Observable<AuthResponse> {
-    return this.http.post<AuthResponse>(
-      'http://localhost:3333/api/auth/login',
-      input,
-    );
+    return this.http.post<AuthResponse>('auth/login', input);
   }
 
   register$(input: Partial<RegisterInput>): Observable<AuthResponse> {
-    return this.http.post<AuthResponse>(
-      'http://localhost:3333/api/auth/register',
-      input,
-    );
+    return this.http.post<AuthResponse>('auth/register', input);
   }
 }

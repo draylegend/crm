@@ -35,6 +35,7 @@ testem.log
 /typings
 .env
 /prisma/dev.db
+/pb_data
 
 # System Files
 .DS_Store

@@ -19,7 +19,8 @@
       "@crm/auth/domain": ["libs/auth/domain/src/index.ts"],
       "@crm/auth/feature": ["libs/auth/feature/src/index.ts"],
       "@crm/core/domain": ["libs/core/domain/src/index.ts"],
-      "@crm/shared/api": ["libs/shared/api/src/index.ts"]
+      "@crm/shared/api": ["libs/shared/api/src/index.ts"],
+      "@crm/shared/domain": ["libs/shared/domain/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

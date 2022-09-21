@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@crm/admin/feature": ["libs/admin/feature/src/index.ts"],
       "@crm/auth/api": ["libs/auth/api/src/index.ts"],
       "@crm/auth/domain": ["libs/auth/domain/src/index.ts"],
       "@crm/auth/feature": ["libs/auth/feature/src/index.ts"],

@@ -17,6 +17,7 @@
     "paths": {
       "@crm/admin/domain": ["libs/admin/domain/src/index.ts"],
       "@crm/admin/feature": ["libs/admin/feature/src/index.ts"],
+      "@crm/appointments/domain": ["libs/appointments/domain/src/index.ts"],
       "@crm/auth/api": ["libs/auth/api/src/index.ts"],
       "@crm/auth/domain": ["libs/auth/domain/src/index.ts"],
       "@crm/auth/feature": ["libs/auth/feature/src/index.ts"],

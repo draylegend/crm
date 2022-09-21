@@ -5,6 +5,15 @@ export default [
     path: '',
     loadComponent: () =>
       import('@crm/admin/feature').then(m => m.AdminComponent),
+    children: [
+      {
+        path: 'appointments',
+        loadComponent: () =>
+          import('@crm/appointments/feature').then(
+            m => m.AppointmentsComponent,
+          ),
+      },
+    ],
   },
   {
     path: 'auth',

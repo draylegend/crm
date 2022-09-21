@@ -6,6 +6,7 @@
     "admin-feature": "libs/admin/feature",
     "api": "apps/api",
     "appointments-domain": "libs/appointments/domain",
+    "appointments-feature": "libs/appointments/feature",
     "auth-api": "libs/auth/api",
     "auth-domain": "libs/auth/domain",
     "auth-feature": "libs/auth/feature",

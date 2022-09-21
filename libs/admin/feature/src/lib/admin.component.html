@@ -1,1 +1,19 @@
-<p>admin works!</p>
+<mat-sidenav-container>
+  <mat-sidenav #nav mode="side" opened>
+    <mat-nav-list>
+      <mat-list-item routerLink="/appointments" routerLinkActive="mat-primary">
+        <mat-icon mat-list-icon>calendar_view_week</mat-icon>
+        <div mat-line>Appointments</div>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <button (click)="nav.toggle()" mat-icon-button>
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

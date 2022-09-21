@@ -2,6 +2,11 @@ import { Routes } from '@angular/router';
 
 export default [
   {
+    path: '',
+    loadComponent: () =>
+      import('@crm/admin/feature').then(m => m.AdminComponent),
+  },
+  {
     path: 'auth',
     children: [
       {
@@ -17,5 +22,5 @@ export default [
       { path: '**', redirectTo: 'login' },
     ],
   },
-  { path: '**', redirectTo: 'auth' },
+  { path: '**', redirectTo: '' },
 ] as Routes;

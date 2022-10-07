@@ -4,6 +4,8 @@
   "projects": {
     "admin-domain": "libs/admin/domain",
     "admin-feature": "libs/admin/feature",
+    "angular-admin": "apps/angular-admin",
+    "angular-admin-e2e": "apps/angular-admin-e2e",
     "appointments-domain": "libs/appointments/domain",
     "appointments-feature": "libs/appointments/feature",
     "auth-api": "libs/auth/api",
@@ -12,8 +14,6 @@
     "core-domain": "libs/core/domain",
     "nest-api": "apps/nest-api",
     "shared-api": "libs/shared/api",
-    "shared-domain": "libs/shared/domain",
-    "web-admin": "apps/web-admin",
-    "web-admin-e2e": "apps/web-admin-e2e"
+    "shared-domain": "libs/shared/domain"
   }
 }

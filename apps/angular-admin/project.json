@@ -1,23 +1,25 @@
 {
+  "name": "angular-admin",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "sourceRoot": "apps/web-admin/src",
+  "sourceRoot": "apps/angular-admin/src",
   "prefix": "app",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/web-admin",
-        "index": "apps/web-admin/src/index.html",
-        "main": "apps/web-admin/src/main.ts",
-        "polyfills": "apps/web-admin/src/polyfills.ts",
-        "tsConfig": "apps/web-admin/tsconfig.app.json",
+        "outputPath": "dist/apps/angular-admin",
+        "index": "apps/angular-admin/src/index.html",
+        "main": "apps/angular-admin/src/main.ts",
+        "polyfills": "apps/angular-admin/src/polyfills.ts",
+        "tsConfig": "apps/angular-admin/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
-          "apps/web-admin/src/favicon.ico",
-          "apps/web-admin/src/assets"
+          "apps/angular-admin/src/favicon.ico",
+          "apps/angular-admin/src/assets"
         ],
-        "styles": ["apps/web-admin/src/styles.scss"],
+        "styles": ["apps/angular-admin/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -36,8 +38,8 @@
           ],
           "fileReplacements": [
             {
-              "replace": "apps/web-admin/src/environments/environment.ts",
-              "with": "apps/web-admin/src/environments/environment.prod.ts"
+              "replace": "apps/angular-admin/src/environments/environment.ts",
+              "with": "apps/angular-admin/src/environments/environment.prod.ts"
             }
           ],
           "outputHashing": "all"
@@ -57,37 +59,37 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "web-admin:build:production"
+          "browserTarget": "angular-admin:build:production"
         },
         "development": {
-          "browserTarget": "web-admin:build:development"
+          "browserTarget": "angular-admin:build:development"
         }
       },
       "defaultConfiguration": "development",
       "options": {
-        "proxyConfig": "apps/web-admin/proxy.conf.json"
+        "proxyConfig": "apps/angular-admin/proxy.conf.json"
       }
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "web-admin:build"
+        "browserTarget": "angular-admin:build"
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
         "lintFilePatterns": [
-          "apps/web-admin/**/*.ts",
-          "apps/web-admin/**/*.html"
+          "apps/angular-admin/**/*.ts",
+          "apps/angular-admin/**/*.html"
         ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/web-admin"],
+      "outputs": ["coverage/apps/angular-admin"],
       "options": {
-        "jestConfig": "apps/web-admin/jest.config.ts",
+        "jestConfig": "apps/angular-admin/jest.config.ts",
         "passWithNoTests": true
       }
     }

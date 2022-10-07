@@ -43,5 +43,5 @@
       "style": "scss"
     }
   },
-  "defaultProject": "web-admin"
+  "defaultProject": "angular-admin"
 }

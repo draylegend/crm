@@ -2,7 +2,9 @@
   <mat-sidenav #nav mode="side" opened>
     <mat-nav-list>
       <mat-list-item routerLink="/appointments" routerLinkActive="mat-primary">
-        <mat-icon mat-list-icon>calendar_view_week</mat-icon>
+        <mat-icon fontSet="material-symbols-outlined" mat-list-icon>
+          calendar_month
+        </mat-icon>
         <div mat-line>Appointments</div>
       </mat-list-item>
     </mat-nav-list>
@@ -10,7 +12,7 @@
   <mat-sidenav-content>
     <mat-toolbar>
       <button (click)="nav.toggle()" mat-icon-button>
-        <mat-icon>menu</mat-icon>
+        <mat-icon fontSet="material-symbols-outlined">menu</mat-icon>
       </button>
     </mat-toolbar>
 

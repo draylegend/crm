@@ -1,0 +1,13 @@
+:host {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+}
+
+app-list {
+  grid-row: 1 / span 2;
+}
+
+router-outlet {
+  display: none;
+}

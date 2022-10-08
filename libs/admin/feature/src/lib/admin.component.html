@@ -1,19 +1,12 @@
-<mat-sidenav-container>
-  <mat-sidenav #nav mode="side" opened>
-    <app-list>
-      <app-list-item routerLink="/appointments" routerLinkActive="mat-primary">
-        <app-icon appListIcon>calendar_month</app-icon>
-        <div>Appointments</div>
-      </app-list-item>
-    </app-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <mat-toolbar>
-      <button (click)="nav.toggle()" app-button-icon>
-        <app-icon>menu</app-icon>
-      </button>
-    </mat-toolbar>
+<app-list>
+  <app-list-item routerLink="/appointments" routerLinkActive="mat-primary">
+    <app-icon appListIcon>calendar_month</app-icon>
+    <div>Appointments</div>
+  </app-list-item>
+</app-list>
 
-    <router-outlet></router-outlet>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<button (click)="toggle()" app-button-icon>
+  <app-icon>menu</app-icon>
+</button>
+
+<router-outlet></router-outlet>

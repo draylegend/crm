@@ -5,8 +5,10 @@
   </app-list-item>
 </app-list>
 
-<button (click)="toggle()" app-button-icon>
-  <app-icon>menu</app-icon>
-</button>
+<app-toolbar>
+  <button (click)="toggle()" app-button-icon>
+    <app-icon>menu</app-icon>
+  </button>
+</app-toolbar>
 
 <router-outlet></router-outlet>

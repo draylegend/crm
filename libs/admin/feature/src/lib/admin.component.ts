@@ -7,6 +7,7 @@ import {
   ListComponent,
   ListIconDirective,
   ListItemComponent,
+  ToolbarComponent,
 } from '@crm/shared/ui';
 
 @Component({
@@ -24,6 +25,7 @@ import {
     RouterLink,
     RouterLinkActive,
     RouterOutlet,
+    ToolbarComponent,
   ],
 })
 export class AdminComponent {

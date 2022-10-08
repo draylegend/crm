@@ -16,13 +16,17 @@ $web-admin-theme: mat.define-light-theme(
 @include mat.all-component-themes($web-admin-theme);
 
 html,
+body {
+  height: 100%;
+}
+
+html,
 body,
 app-root,
 ng-component {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  height: 100%;
   margin: 0;
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  font-family: sans-serif;
 }

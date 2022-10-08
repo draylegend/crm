@@ -15,6 +15,7 @@
     "core-domain": "libs/core/domain",
     "nest-api": "apps/nest-api",
     "shared-api": "libs/shared/api",
-    "shared-domain": "libs/shared/domain"
+    "shared-domain": "libs/shared/domain",
+    "shared-ui": "libs/shared/ui"
   }
 }

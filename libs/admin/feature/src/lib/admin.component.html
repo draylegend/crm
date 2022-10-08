@@ -1,11 +1,11 @@
 <mat-sidenav-container>
   <mat-sidenav #nav mode="side" opened>
-    <mat-nav-list>
-      <mat-list-item routerLink="/appointments" routerLinkActive="mat-primary">
-        <app-icon mat-list-icon>calendar_month</app-icon>
-        <div mat-line>Appointments</div>
-      </mat-list-item>
-    </mat-nav-list>
+    <app-list>
+      <app-list-item routerLink="/appointments" routerLinkActive="mat-primary">
+        <app-icon appListIcon>calendar_month</app-icon>
+        <div>Appointments</div>
+      </app-list-item>
+    </app-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar>

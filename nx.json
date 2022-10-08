@@ -71,6 +71,10 @@
     "@nrwl/nest:service": {
       "directory": "lib",
       "flat": true
+    },
+    "@schematics/angular:directive": {
+      "flat": false,
+      "standalone": true
     }
   },
   "defaultProject": "angular-admin"

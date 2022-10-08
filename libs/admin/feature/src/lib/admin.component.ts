@@ -1,10 +1,15 @@
 import { AsyncPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { ButtonIconComponent, IconComponent } from '@crm/shared/ui';
+import {
+  ButtonIconComponent,
+  IconComponent,
+  ListComponent,
+  ListIconDirective,
+  ListItemComponent,
+} from '@crm/shared/ui';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -15,7 +20,9 @@ import { ButtonIconComponent, IconComponent } from '@crm/shared/ui';
     AsyncPipe,
     ButtonIconComponent,
     IconComponent,
-    MatListModule,
+    ListComponent,
+    ListItemComponent,
+    ListIconDirective,
     MatSidenavModule,
     MatToolbarModule,
     RouterLink,

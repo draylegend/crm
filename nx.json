@@ -33,14 +33,44 @@
       "style": "scss",
       "linter": "eslint",
       "unitTestRunner": "jest",
-      "e2eTestRunner": "cypress"
+      "e2eTestRunner": "cypress",
+      "prefix": "app"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss",
+      "changeDetection": "OnPush",
+      "inlineStyle": true,
+      "standalone": true
     },
     "@nrwl/angular:library": {
       "linter": "eslint",
-      "unitTestRunner": "jest"
+      "unitTestRunner": "jest",
+      "changeDetection": "OnPush",
+      "inlineStyle": true,
+      "prefix": "app",
+      "skipModule": true,
+      "skipSelector": true,
+      "standalone": true,
+      "standaloneConfig": true,
+      "style": "scss",
+      "tags": "scope:,type:"
     },
-    "@nrwl/angular:component": {
-      "style": "scss"
+    "@nrwl/nest:application": {
+      "standaloneConfig": true,
+      "tags": "scope:,type:"
+    },
+    "@nrwl/nest:library": {
+      "strict": true,
+      "tags": "scope:,type:",
+      "target": "esnext"
+    },
+    "@nrwl/nest:resolver": {
+      "directory": "lib",
+      "flat": true
+    },
+    "@nrwl/nest:service": {
+      "directory": "lib",
+      "flat": true
     }
   },
   "defaultProject": "angular-admin"

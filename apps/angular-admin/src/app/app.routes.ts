@@ -12,6 +12,16 @@ export default [
           import('@crm/appointments/feature').then(
             m => m.AppointmentsComponent,
           ),
+        children: [
+          {
+            path: 'week',
+            loadComponent: () =>
+              import('@crm/appointments/week/feature').then(
+                m => m.AppointmentsWeekFeatureComponent,
+              ),
+          },
+          { path: '**', redirectTo: 'week' },
+        ],
       },
     ],
   },

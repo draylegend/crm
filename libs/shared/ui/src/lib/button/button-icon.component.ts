@@ -2,15 +2,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
-  selector: 'app-icon',
+  // eslint-disable-next-line @angular-eslint/component-selector
+  selector: '[app-button-icon]',
   standalone: true,
-  styles: [
-    `
-      :host {
-        font: 24px 'Material Symbols Outlined';
-      }
-    `,
-  ],
+  styleUrls: ['./button-icon.component.scss'],
   template: `<ng-content></ng-content>`,
 })
-export class IconComponent {}
+export class ButtonIconComponent {}

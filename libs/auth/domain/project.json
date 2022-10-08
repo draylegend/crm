@@ -1,4 +1,5 @@
 {
+  "name": "auth-domain",
   "projectType": "library",
   "sourceRoot": "libs/auth/domain/src",
   "prefix": "app",

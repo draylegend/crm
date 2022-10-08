@@ -1,4 +1,5 @@
 {
+  "name": "auth-feature",
   "projectType": "library",
   "sourceRoot": "libs/auth/feature/src",
   "prefix": "app",

@@ -1,4 +1,5 @@
 {
+  "name": "appointments-domain",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
   "sourceRoot": "libs/appointments/domain/src",

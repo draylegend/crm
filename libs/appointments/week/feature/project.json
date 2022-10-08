@@ -1,0 +1,27 @@
+{
+  "name": "appointments-week-feature",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/appointments/week/feature/src",
+  "prefix": "app",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/appointments/week/feature"],
+      "options": {
+        "jestConfig": "libs/appointments/week/feature/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/appointments/week/feature/**/*.ts",
+          "libs/appointments/week/feature/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["scope:appointments-week type:feature"]
+}

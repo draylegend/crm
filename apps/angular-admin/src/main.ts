@@ -1,7 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { enableProdMode, importProvidersFrom } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
-import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
 import { provideAuth } from '@crm/auth/domain';
 import { provideApi } from '@crm/core/domain';
@@ -15,7 +14,6 @@ environment.production && enableProdMode();
 bootstrapApplication(AppComponent, {
   providers: [
     importProvidersFrom(HttpClientModule),
-    provideAnimations(),
     provideApi(),
     provideAuth(),
     provideRouter(routes),

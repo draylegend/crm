@@ -1,10 +1,6 @@
-import { CommonModule } from '@angular/common';
+import { AsyncPipe, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
 import { RouterModule } from '@angular/router';
 import { AuthService, RegisterFacade } from '@crm/auth/domain';
 
@@ -13,15 +9,7 @@ import { AuthService, RegisterFacade } from '@crm/auth/domain';
   standalone: true,
   styleUrls: ['./register.component.scss'],
   templateUrl: './register.component.html',
-  imports: [
-    CommonModule,
-    MatButtonModule,
-    MatCardModule,
-    MatIconModule,
-    MatInputModule,
-    ReactiveFormsModule,
-    RouterModule,
-  ],
+  imports: [AsyncPipe, NgIf, ReactiveFormsModule, RouterModule],
   providers: [AuthService, RegisterFacade],
 })
 export class RegisterComponent {

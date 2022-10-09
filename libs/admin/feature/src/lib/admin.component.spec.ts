@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { provideNoopAnimations } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
 import { AdminComponent } from './admin.component';
 
@@ -10,7 +9,7 @@ describe('AdminComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [AdminComponent],
-      providers: [provideNoopAnimations(), provideRouter([])],
+      providers: [provideRouter([])],
     });
 
     fixture = TestBed.createComponent(AdminComponent);

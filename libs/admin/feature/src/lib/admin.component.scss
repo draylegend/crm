@@ -2,6 +2,10 @@
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: auto 1fr;
+
+  &.nav-hidden {
+    grid-template-columns: 1fr;
+  }
 }
 
 app-list {
@@ -9,5 +13,9 @@ app-list {
 }
 
 router-outlet {
+  display: none;
+}
+
+[hidden] {
   display: none;
 }

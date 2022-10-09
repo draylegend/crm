@@ -1,4 +1,4 @@
-<app-list>
+<app-list [hidden]="hidden">
   <app-list-item routerLink="/appointments" routerLinkActive="mat-primary">
     <app-icon appListIcon>calendar_month</app-icon>
     <div>Appointments</div>
@@ -6,7 +6,7 @@
 </app-list>
 
 <app-toolbar>
-  <button (click)="toggle()" app-button-icon>
+  <button (click)="hidden = !hidden" app-button-icon>
     <app-icon>menu</app-icon>
   </button>
 </app-toolbar>

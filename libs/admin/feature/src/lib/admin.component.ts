@@ -1,5 +1,5 @@
 import { AsyncPipe } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostBinding } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import {
   ButtonIconComponent,
@@ -29,7 +29,9 @@ import {
   ],
 })
 export class AdminComponent {
-  toggle(): void {
-    //
+  hidden = false;
+
+  @HostBinding('class.nav-hidden') get navHidden(): boolean {
+    return this.hidden;
   }
 }

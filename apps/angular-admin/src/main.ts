@@ -3,7 +3,7 @@ import { enableProdMode, importProvidersFrom } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { provideRouter } from '@angular/router';
 import { provideAuth } from '@crm/auth/domain';
-import { provideApi } from '@crm/core/domain';
+import { coreProviders } from '@crm/core/domain';
 import { provideEnv } from '@crm/shared/domain';
 import { AppComponent } from './app/app.component';
 import routes from './app/app.routes';
@@ -13,8 +13,8 @@ environment.production && enableProdMode();
 
 bootstrapApplication(AppComponent, {
   providers: [
+    coreProviders,
     importProvidersFrom(HttpClientModule),
-    provideApi(),
     provideAuth(),
     provideRouter(routes),
     provideEnv(environment),

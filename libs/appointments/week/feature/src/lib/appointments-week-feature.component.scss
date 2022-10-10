@@ -1,0 +1,5 @@
+:host {
+  background-image: linear-gradient(lightgray 1px, transparent 1px),
+    linear-gradient(90deg, lightgray 1px, transparent 1px);
+  background-size: calc(100% / var(--visibleDays)) 60px;
+}

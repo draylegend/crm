@@ -21,6 +21,7 @@
       "@crm/appointments/week/feature": [
         "libs/appointments/week/feature/src/index.ts"
       ],
+      "@crm/appointments/week/ui": ["libs/appointments/week/ui/src/index.ts"],
       "@crm/auth/api": ["libs/auth/api/src/index.ts"],
       "@crm/auth/domain": ["libs/auth/domain/src/index.ts"],
       "@crm/auth/feature": ["libs/auth/feature/src/index.ts"],

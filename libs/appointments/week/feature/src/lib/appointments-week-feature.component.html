@@ -1,2 +1,7 @@
-<div class="appointment" style="grid-row-start: 2">1</div>
-<div class="appointment" style="grid-row-start: 5">2</div>
+<app-appointment [date]="a1">
+  {{ a1.getHours() }}:{{ a1.getMinutes() }}
+</app-appointment>
+
+<app-appointment [date]="a2">
+  {{ a2.getHours() }}:{{ a2.getMinutes() }}
+</app-appointment>

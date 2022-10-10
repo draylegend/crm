@@ -9,6 +9,7 @@ import { ChangeDetectionStrategy, Component, HostBinding } from '@angular/core';
 export class AppointmentsWeekFeatureComponent {
   @HostBinding('style') get style(): Record<string, string | number> {
     return {
+      '--hours': 24 * 2,
       '--visibleDays': 7,
     };
   }

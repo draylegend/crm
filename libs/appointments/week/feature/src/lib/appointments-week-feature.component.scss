@@ -1,4 +1,8 @@
 :host {
+  display: grid;
+  grid-template-columns: repeat(var(--visibleDays), 1fr);
+  grid-template-rows: repeat(var(--hours), 30px);
+  height: 100%;
   background-image: linear-gradient(lightgray 1px, transparent 1px),
     linear-gradient(90deg, lightgray 1px, transparent 1px);
   background-size: calc(100% / var(--visibleDays)) 60px;

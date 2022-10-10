@@ -18,7 +18,6 @@
       "@crm/admin/domain": ["libs/admin/domain/src/index.ts"],
       "@crm/admin/feature": ["libs/admin/feature/src/index.ts"],
       "@crm/appointments/domain": ["libs/appointments/domain/src/index.ts"],
-      "@crm/appointments/feature": ["libs/appointments/feature/src/index.ts"],
       "@crm/appointments/week/feature": [
         "libs/appointments/week/feature/src/index.ts"
       ],

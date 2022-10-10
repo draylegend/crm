@@ -7,7 +7,6 @@
     "angular-admin": "apps/angular-admin",
     "angular-admin-e2e": "apps/angular-admin-e2e",
     "appointments-domain": "libs/appointments/domain",
-    "appointments-feature": "libs/appointments/feature",
     "appointments-week-feature": "libs/appointments/week/feature",
     "auth-api": "libs/auth/api",
     "auth-domain": "libs/auth/domain",

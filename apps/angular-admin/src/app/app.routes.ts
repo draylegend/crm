@@ -7,22 +7,13 @@ export default [
       import('@crm/admin/feature').then(m => m.AdminComponent),
     children: [
       {
-        path: 'appointments',
+        path: 'appointments/week',
         loadComponent: () =>
-          import('@crm/appointments/feature').then(
-            m => m.AppointmentsComponent,
+          import('@crm/appointments/week/feature').then(
+            m => m.AppointmentsWeekFeatureComponent,
           ),
-        children: [
-          {
-            path: 'week',
-            loadComponent: () =>
-              import('@crm/appointments/week/feature').then(
-                m => m.AppointmentsWeekFeatureComponent,
-              ),
-          },
-          { path: '**', redirectTo: 'week' },
-        ],
       },
+      { path: '**', redirectTo: 'appointments/week' },
     ],
   },
   {

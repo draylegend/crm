@@ -4,31 +4,35 @@ import {
   TranslationWidth,
 } from '@angular/common';
 import { ChangeDetectionStrategy, Component, HostBinding } from '@angular/core';
-import { AppointmentComponent, DaysComponent } from '@crm/appointments/week/ui';
+import {
+  AppointmentComponent,
+  DaysComponent,
+  HoursComponent,
+} from '@crm/appointments/week/ui';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   styleUrls: ['./appointments-week-feature.component.scss'],
   templateUrl: './appointments-week-feature.component.html',
-  imports: [AppointmentComponent, DaysComponent],
+  imports: [AppointmentComponent, DaysComponent, HoursComponent],
 })
 export class AppointmentsWeekFeatureComponent {
-  a1 = new Date();
-  a2: Date;
   days = getLocaleDayNames(
     navigator.language,
     FormStyle.Format,
     TranslationWidth.Short,
   );
-
-  constructor() {
+  hours = Array.from({ length: 24 }).map((_, i) => {
     const d = new Date();
-    d.setDate(12);
+    d.setHours(i);
     d.setMinutes(0);
 
-    this.a2 = d;
-  }
+    return new Intl.DateTimeFormat(navigator.language, {
+      hour: 'numeric',
+      minute: '2-digit',
+    }).format(d);
+  });
 
   @HostBinding('style') get style(): Record<string, string | number> {
     return {

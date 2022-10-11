@@ -1,3 +1,9 @@
 :host {
+  background: white;
+  border-bottom: 1px solid lightgray;
+  margin-bottom: -1px;
   display: flex;
+  justify-content: space-around;
+  position: sticky;
+  top: 0;
 }

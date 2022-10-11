@@ -2,4 +2,8 @@
 
 <app-hours [hours]="hours"></app-hours>
 
-<section></section>
+<section
+  *ngIf="pointer$ | async as p"
+  [style.--pointer]="p.top"
+  [time]="p.time"
+></section>

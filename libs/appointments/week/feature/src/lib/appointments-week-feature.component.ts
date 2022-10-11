@@ -3,7 +3,7 @@ import {
   getLocaleDayNames,
   TranslationWidth,
 } from '@angular/common';
-import { ChangeDetectionStrategy, Component, HostBinding } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import {
   AppointmentComponent,
   DaysComponent,
@@ -33,11 +33,4 @@ export class AppointmentsWeekFeatureComponent {
       minute: '2-digit',
     }).format(d);
   });
-
-  @HostBinding('style') get style(): Record<string, string | number> {
-    return {
-      '--hours': 24,
-      '--visibleDays': 7,
-    };
-  }
 }

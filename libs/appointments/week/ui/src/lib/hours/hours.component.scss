@@ -3,5 +3,7 @@
 }
 
 div {
-  height: calc(1px * var(--hours) * 4);
+  height: calc(var(--hourStep) * 2);
+  text-align: right;
+  padding: 0 8px;
 }

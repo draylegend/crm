@@ -54,4 +54,5 @@ export class AppointmentsWeekFeatureComponent {
       top: d.getHours() * 120 + d.getMinutes() * 2,
     })),
   );
+  d1 = new Date('2022-10-09T09:00:00');
 }

@@ -14,7 +14,7 @@ app-days {
 section {
   display: grid;
   grid-template-columns: repeat(var(--visibleDays), 1fr);
-  grid-template-rows: repeat(var(--hours), var(--hourStep));
+  grid-template-rows: repeat(calc(var(--hours) * 2), var(--hourStep));
   height: 100%;
   background-image: linear-gradient(lightgray 1px, transparent 1px),
     linear-gradient(90deg, lightgray 1px, transparent 1px);

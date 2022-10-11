@@ -4,6 +4,8 @@
 
 <section
   *ngIf="pointer$ | async as p"
-  [style.--pointer]="p.top"
   [pointerTime]="p.time"
-></section>
+  [style.--pointer]="p.top"
+>
+  <app-appointment [date]="d1"></app-appointment>
+</section>

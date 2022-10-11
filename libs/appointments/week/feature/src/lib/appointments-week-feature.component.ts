@@ -5,27 +5,14 @@ import {
   NgIf,
   TranslationWidth,
 } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Directive,
-  Input,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import {
   AppointmentComponent,
   DaysComponent,
   HoursComponent,
+  PointerTimeDirective,
 } from '@crm/appointments/week/ui';
 import { map, timer } from 'rxjs';
-
-@Directive({
-  // eslint-disable-next-line @angular-eslint/directive-selector
-  selector: 'section[time]',
-  standalone: true,
-})
-export class TimeDirective {
-  @Input() time = '';
-}
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -38,7 +25,7 @@ export class TimeDirective {
     DaysComponent,
     HoursComponent,
     NgIf,
-    TimeDirective,
+    PointerTimeDirective,
   ],
 })
 export class AppointmentsWeekFeatureComponent {

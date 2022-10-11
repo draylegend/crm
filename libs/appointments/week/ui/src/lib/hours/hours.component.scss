@@ -1,0 +1,7 @@
+:host {
+  display: grid;
+}
+
+div {
+  height: calc(1px * var(--hours) * 4);
+}

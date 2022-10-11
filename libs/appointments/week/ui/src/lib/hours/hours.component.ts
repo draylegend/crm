@@ -5,6 +5,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-hours[hours]',
   standalone: true,
+  styleUrls: ['./hours.component.scss'],
   templateUrl: './hours.component.html',
   imports: [NgForOf],
 })

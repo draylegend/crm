@@ -36,7 +36,7 @@ export class AppointmentsWeekFeatureComponent {
 
   @HostBinding('style') get style(): Record<string, string | number> {
     return {
-      '--hours': 24 * 2,
+      '--hours': 24,
       '--visibleDays': 7,
     };
   }

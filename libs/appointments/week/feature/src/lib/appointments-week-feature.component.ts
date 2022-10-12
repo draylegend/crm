@@ -51,7 +51,9 @@ export class AppointmentsWeekFeatureComponent {
         hour: 'numeric',
         minute: '2-digit',
       }).format(d),
-      top: d.getHours() * 120 + d.getMinutes() * 2,
+      top:
+        d.getHours() * 120 + // 120 = 60px + 60px
+        d.getMinutes() * 2, // 2 = (60px + 60px) / 60sec/min = 120 / 60
     })),
   );
   d1 = new Date('2022-10-09T09:00:00');

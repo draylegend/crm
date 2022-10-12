@@ -2,6 +2,11 @@
 
 <app-hours [hours]="hours"></app-hours>
 
+<!--
+TODO:
+ figure out, why change detection triggers rerender of
+ app-appointment and appointments-week-feature
+ -->
 <section
   *ngIf="pointer$ | async as p"
   [pointerTime]="p.time"

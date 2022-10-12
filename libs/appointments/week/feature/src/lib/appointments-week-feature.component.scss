@@ -30,7 +30,7 @@ section {
     content: attr(ng-reflect-pointer-time);
     position: absolute;
     top: calc(1px * var(--pointer));
-    margin-left: -56px;
+    transform: translateX(-100%);
     padding: 8px 8px 6px 8px;
   }
 

@@ -1,24 +1,22 @@
 import { Injectable } from '@angular/core';
-import {
-  ActivatedRouteSnapshot,
-  CanActivate,
-  CanLoad,
-  Route,
-  RouterStateSnapshot,
-  UrlSegment,
-} from '@angular/router';
-import { Observable, of } from 'rxjs';
+import { CanActivate, CanLoad } from '@angular/router';
+import { AuthFacade } from './auth.facade';
 
 @Injectable()
 export class AuthGuard implements CanActivate, CanLoad {
-  canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot,
-  ): Observable<boolean> {
-    return of(true);
+  constructor(private facade: AuthFacade) {}
+
+  canActivate(): boolean {
+    return this.#can();
   }
 
-  canLoad(route: Route, segments: UrlSegment[]): Observable<boolean> {
-    return of(true);
+  canLoad(): boolean {
+    return this.#can();
+  }
+
+  #can(): boolean {
+    return this.facade.token.getValue().access
+      ? true
+      : (this.facade.navToLogin(), false);
   }
 }

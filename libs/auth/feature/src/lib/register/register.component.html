@@ -1,11 +1,12 @@
-<form (ngSubmit)="facade.submit()" [formGroup]="facade.form">
-  <input autofocus formControlName="firstName" placeholder="First name" />
+<form (ngSubmit)="facade.submit()" [formGroup]="facade.form" autocomplete="on">
+  <input autocomplete="email" formControlName="email" placeholder="Email" />
 
-  <input formControlName="lastName" placeholder="Last name" />
-
-  <input formControlName="email" placeholder="Email" />
-
-  <input formControlName="password" placeholder="Password" type="password" />
+  <input
+    autocomplete="password"
+    formControlName="password"
+    placeholder="Password"
+    type="password"
+  />
 
   <p *ngIf="facade.error$ | async as error" class="mat-error">
     {{ error }}
@@ -15,7 +16,5 @@
     Submit
   </button>
 
-  <button [disabled]="facade.submitting$ | async" routerLink="/auth/login">
-    Login
-  </button>
+  <a routerLink="/auth/login">Login</a>
 </form>

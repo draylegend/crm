@@ -11,7 +11,7 @@ import { AppComponent } from './app/app.component';
 import routes from './app/app.routes';
 import { environment } from './environments/environment';
 
-registerLocaleData(localeRU, navigator.language);
+registerLocaleData(localeRU, 'ru-RU');
 
 environment.production && enableProdMode();
 

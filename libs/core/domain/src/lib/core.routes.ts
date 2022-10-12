@@ -1,10 +1,14 @@
 import { Routes } from '@angular/router';
+import { AuthGuard } from '@crm/auth/domain';
 
 export const routes = [
   {
     path: '',
     loadComponent: () =>
       import('@crm/admin/feature').then(m => m.AdminComponent),
+    canActivate: [AuthGuard],
+    canLoad: [AuthGuard],
+    providers: [AuthGuard],
     children: [
       {
         path: 'appointments/week',

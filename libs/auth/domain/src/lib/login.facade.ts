@@ -28,8 +28,8 @@ export class LoginFacade {
     switchMap(() =>
       this.service.login$(this.form.value).pipe(
         map(() => ({ submitDisabled: true })),
-        catchError(({ error: { message } }: HttpErrorResponse) => [
-          { error: message },
+        catchError(({ error }: HttpErrorResponse) => [
+          { error: error?.message || 'server.offline' },
         ]),
       ),
     ),

@@ -9,7 +9,6 @@ export class AuthFacade {
   constructor(private router: Router) {}
 
   navToLogin(): void {
-    console.log(2);
     this.router.navigate(['/auth/login']);
   }
 }

@@ -1,10 +1,13 @@
 <form (ngSubmit)="facade.submit()" [formGroup]="facade.form" autocomplete="on">
+  <p *ngIf="facade.error$ | async as e">{{ e }}</p>
+
   <input autocomplete="email" formControlName="email" placeholder="Email" />
 
   <input
     autocomplete="password"
     formControlName="password"
     placeholder="Password"
+    type="password"
   />
 
   <button [disabled]="(facade.submitting$ | async) || facade.form.invalid">

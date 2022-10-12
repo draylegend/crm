@@ -4,7 +4,7 @@ import localeRU from '@angular/common/locales/ru';
 import { enableProdMode, importProvidersFrom } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { provideRouter } from '@angular/router';
-import { provideAuth } from '@crm/auth/domain';
+import { authProvider } from '@crm/auth/domain';
 import { coreProviders } from '@crm/core/domain';
 import { provideEnv } from '@crm/shared/domain';
 import { AppComponent } from './app/app.component';
@@ -17,9 +17,9 @@ environment.production && enableProdMode();
 
 bootstrapApplication(AppComponent, {
   providers: [
+    authProvider,
     coreProviders,
     importProvidersFrom(HttpClientModule),
-    provideAuth(),
     provideRouter(routes),
     provideEnv(environment),
   ],

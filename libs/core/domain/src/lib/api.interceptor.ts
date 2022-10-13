@@ -1,11 +1,10 @@
 import {
-  HTTP_INTERCEPTORS,
   HttpEvent,
   HttpHandler,
   HttpInterceptor,
   HttpRequest,
 } from '@angular/common/http';
-import { ClassProvider, inject, Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { ENV } from '@crm/shared/domain';
 import { Observable } from 'rxjs';
 
@@ -24,9 +23,3 @@ export class ApiInterceptor implements HttpInterceptor {
     return next.handle(req.clone({ url: `${this.#env.api}${req.url}` }));
   }
 }
-
-export const apiInterceptorProvider: ClassProvider = {
-  provide: HTTP_INTERCEPTORS,
-  useClass: ApiInterceptor,
-  multi: true,
-};
